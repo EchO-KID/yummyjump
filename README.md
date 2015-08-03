@@ -5,6 +5,9 @@ Yummy Jump is a physics-based 2D game available for [iOS](https://itunes.apple.c
 
 The game has been developed using the cross-platform cocos2d-x and the box2d physics engine.
 
+![alt tag](Assets/screenshots/screen_0_520x924.jpeg)
+![alt tag](Assets/screenshots/screen_1_520x924.jpeg)
+
 ## License
 
 MIT License
