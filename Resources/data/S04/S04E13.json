@@ -1,0 +1,788 @@
+{
+    "assets": {
+        "batch": [
+            "balloon_rope.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:55", 
+    "graph": [
+        {
+            "defaultColor": [
+                229, 
+                237, 
+                246, 
+                255
+            ], 
+            "sprite": "season4_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "frame": "idle.png", 
+            "initialImpulse": 0, 
+            "position": [
+                6.02, 
+                3.96
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "frame": "ice_cream_cone.png", 
+            "position": [
+                8.65, 
+                0.84
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "position": [
+                6.04, 
+                3.34, 
+                7.04, 
+                4.34
+            ], 
+            "type": "elasticRope"
+        }, 
+        {
+            "frame": "snow_ground.png", 
+            "friction": "0", 
+            "points": [
+                2.35, 
+                4.07, 
+                4.94, 
+                4.01
+            ], 
+            "type": "iceGround"
+        }, 
+        {
+            "frame": "snow_ground.png", 
+            "friction": "0", 
+            "points": [
+                1.26, 
+                5.89, 
+                2.69, 
+                6.57
+            ], 
+            "type": "iceGround"
+        }, 
+        {
+            "frame": "snow_ground.png", 
+            "friction": "0", 
+            "points": [
+                4.89, 
+                6.35, 
+                5.49, 
+                5.87
+            ], 
+            "type": "iceGround"
+        }, 
+        {
+            "frame": "snow_ground.png", 
+            "friction": "0", 
+            "points": [
+                0.94, 
+                2.28, 
+                3.52, 
+                1.68, 
+                8.38, 
+                1.52
+            ], 
+            "type": "iceGround"
+        }, 
+        {
+            "angle": 1.5707963267949, 
+            "frame": "spear.png", 
+            "position": [
+                1.47, 
+                3.9
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "angle": 1.5707963267949, 
+            "frame": "spear.png", 
+            "position": [
+                1.47, 
+                4.72
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "angle": 3.1066860685499, 
+            "frame": "spear.png", 
+            "position": [
+                4.54, 
+                1.86
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "angle": 3.1066860685499, 
+            "frame": "spear.png", 
+            "position": [
+                5.47, 
+                1.83
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "angle": 3.1066860685499, 
+            "frame": "spear.png", 
+            "position": [
+                7.31, 
+                1.73
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "angle": 3.1066860685499, 
+            "frame": "spear.png", 
+            "position": [
+                6.4, 
+                1.79
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "frame": "ice_cream_bar.png", 
+            "position": [
+                3.46, 
+                4.05
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "ice_cream_bar.png", 
+            "position": [
+                6.97, 
+                1.92
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "ice_cream_bar.png", 
+            "position": [
+                4.97, 
+                2.02
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "color": [
+                255, 
+                255, 
+                255
+            ], 
+            "points": [
+                [
+                    2.36, 
+                    4.02, 
+                    4.93, 
+                    3.95, 
+                    5.1, 
+                    3.49, 
+                    3.8, 
+                    3.36, 
+                    2.3, 
+                    3.58
+                ], 
+                [
+                    2.35, 
+                    5.09, 
+                    5.05, 
+                    5.07, 
+                    5.62, 
+                    5.68, 
+                    4.89, 
+                    6.32, 
+                    5.31, 
+                    7.11, 
+                    1.53, 
+                    7.13, 
+                    2.72, 
+                    6.57, 
+                    1.22, 
+                    5.86
+                ], 
+                [
+                    1.24, 
+                    5.08, 
+                    1.23, 
+                    3.68, 
+                    -0.26, 
+                    4.58, 
+                    0.38, 
+                    6
+                ], 
+                [
+                    0.96, 
+                    2.22, 
+                    3.52, 
+                    1.61, 
+                    8.38, 
+                    1.46, 
+                    8.06, 
+                    0.91, 
+                    8.23, 
+                    0.43, 
+                    7.86, 
+                    0.89, 
+                    7.79, 
+                    0.57, 
+                    7.62, 
+                    0.78, 
+                    7.6, 
+                    0.13, 
+                    7.45, 
+                    0.85, 
+                    7.38, 
+                    0.46, 
+                    7.25, 
+                    0.83, 
+                    7.21, 
+                    0.29, 
+                    7.04, 
+                    0.82, 
+                    5.8, 
+                    0.73, 
+                    4.81, 
+                    0.61, 
+                    4.69, 
+                    -0.06, 
+                    3.45, 
+                    -0.06, 
+                    2.75, 
+                    1.21, 
+                    2.63, 
+                    1.24, 
+                    2.42, 
+                    0.93, 
+                    2.38, 
+                    1.29, 
+                    2.17, 
+                    0.53, 
+                    2.11, 
+                    1.02, 
+                    2.01, 
+                    1.37, 
+                    1.92, 
+                    0.28, 
+                    1.76, 
+                    1.42, 
+                    1.71, 
+                    1.08, 
+                    1.51, 
+                    1.48, 
+                    1.29, 
+                    0.78, 
+                    1.27, 
+                    1.53, 
+                    1.04, 
+                    1.14, 
+                    1.02, 
+                    1.59, 
+                    0.72, 
+                    0.93, 
+                    0.77, 
+                    1.64
+                ]
+            ], 
+            "texture": "ground_texture_season4.png", 
+            "type": "ground", 
+            "uid": 10
+        }, 
+        {
+            "color": [
+                215, 
+                222, 
+                227
+            ], 
+            "endPos": [
+                10, 
+                6
+            ], 
+            "opacity": "128", 
+            "sprite": "season_clouds.png", 
+            "startPos": [
+                0, 
+                6
+            ], 
+            "time": "10", 
+            "type": "infiniteSprite"
+        }, 
+        {
+            "aabb": [
+                0, 
+                3.46, 
+                10.01, 
+                7
+            ], 
+            "layer": "background", 
+            "repeatV": false, 
+            "texture": "season4_background_pattern.png", 
+            "translation": [
+                0.01, 
+                -0.01
+            ], 
+            "type": "scrollingTexture", 
+            "zorder": "backgroundTexture"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                2.38, 
+                2.77
+            ], 
+            "scale": [
+                1.3, 
+                1.5
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                2.38, 
+                2.77
+            ], 
+            "scale": [
+                1.3, 
+                1.5
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "flip": [
+                true, 
+                false
+            ], 
+            "frame": "season4_tree.png", 
+            "position": [
+                8.34, 
+                2.43
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.5, 
+                0.6
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "flip": [
+                true, 
+                false
+            ], 
+            "frame": "season4_tree.png", 
+            "position": [
+                8.34, 
+                2.43
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.5, 
+                0.6
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                7.61, 
+                2.93
+            ], 
+            "scale": [
+                0.8, 
+                1.2
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                7.61, 
+                2.93
+            ], 
+            "scale": [
+                0.8, 
+                1.2
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                4.85, 
+                2.63
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                4.85, 
+                2.63
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "opacity": "130", 
+            "points": [
+                2.94, 
+                6.68, 
+                3.8, 
+                5.1, 
+                4.16, 
+                5.1, 
+                3.92, 
+                5.79, 
+                4.49, 
+                5.06, 
+                4.76, 
+                5.05, 
+                3.78, 
+                6.65
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture"
+        }, 
+        {
+            "color": [
+                153, 
+                234, 
+                255, 
+                255
+            ], 
+            "points": [
+                1.81, 
+                7, 
+                2.75, 
+                6.56, 
+                1.23, 
+                5.85, 
+                2.36, 
+                5.08, 
+                5.05, 
+                5.07, 
+                5.63, 
+                5.69, 
+                4.9, 
+                6.33, 
+                5.31, 
+                7.08
+            ], 
+            "radius": "1", 
+            "type": "line"
+        }, 
+        {
+            "color": [
+                153, 
+                234, 
+                255, 
+                255
+            ], 
+            "points": [
+                1.37, 
+                2.13, 
+                0.97, 
+                2.23, 
+                0.76, 
+                1.64, 
+                0.72, 
+                0.91, 
+                1.02, 
+                1.6, 
+                1.02, 
+                1.12, 
+                1.27, 
+                1.53, 
+                1.28, 
+                0.76, 
+                1.52, 
+                1.48, 
+                1.72, 
+                1.07, 
+                1.76, 
+                1.41, 
+                1.91, 
+                0.28, 
+                2.02, 
+                1.37, 
+                2.11, 
+                1, 
+                2.15, 
+                0.52, 
+                2.38, 
+                1.28, 
+                2.42, 
+                0.93, 
+                2.63, 
+                1.23, 
+                2.76, 
+                1.21, 
+                3.44, 
+                -0.07, 
+                4.7, 
+                -0.08, 
+                4.81, 
+                0.59, 
+                5.8, 
+                0.72, 
+                7.05, 
+                0.81, 
+                7.21, 
+                0.25, 
+                7.25, 
+                0.82, 
+                7.4, 
+                0.43, 
+                7.45, 
+                0.84, 
+                7.6, 
+                0.11, 
+                7.63, 
+                0.77, 
+                7.77, 
+                0.56, 
+                7.87, 
+                0.87, 
+                8.21, 
+                0.43, 
+                8.07, 
+                0.89, 
+                8.39, 
+                1.48, 
+                8.16, 
+                1.49
+            ], 
+            "radius": "1", 
+            "type": "line"
+        }, 
+        {
+            "color": [
+                153, 
+                234, 
+                255, 
+                255
+            ], 
+            "points": [
+                -0.03, 
+                5.08, 
+                0.37, 
+                6.01, 
+                1.22, 
+                5.11, 
+                1.24, 
+                3.68, 
+                -0.03, 
+                4.43
+            ], 
+            "radius": "1", 
+            "type": "line"
+        }, 
+        {
+            "color": [
+                153, 
+                234, 
+                255, 
+                255
+            ], 
+            "points": [
+                4.73, 
+                3.95, 
+                4.94, 
+                3.97, 
+                5.12, 
+                3.48, 
+                3.81, 
+                3.36, 
+                2.29, 
+                3.57, 
+                2.36, 
+                4.03, 
+                2.5, 
+                4.02
+            ], 
+            "radius": "1", 
+            "type": "line"
+        }, 
+        {
+            "opacity": "130", 
+            "points": [
+                0.36, 
+                5.99, 
+                0.7, 
+                4, 
+                0.95, 
+                3.85, 
+                0.74, 
+                5.07, 
+                1.24, 
+                3.91, 
+                1.22, 
+                4.55, 
+                0.92, 
+                5.42
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture"
+        }, 
+        {
+            "opacity": "130", 
+            "points": [
+                2.67, 
+                1.84, 
+                3.94, 
+                -0.1, 
+                3.73, 
+                0.84, 
+                4.53, 
+                -0.07, 
+                3.96, 
+                1.02, 
+                3.48, 
+                1.62
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture"
+        }, 
+        {
+            "opacity": "130", 
+            "points": [
+                5.29, 
+                1.58, 
+                5.91, 
+                0.73, 
+                6.27, 
+                0.76, 
+                6.04, 
+                1.29, 
+                6.54, 
+                0.79, 
+                6.8, 
+                0.8, 
+                6.13, 
+                1.55
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture"
+        }
+    ], 
+    "levelid": 13, 
+    "scripts": [
+        "season4"
+    ], 
+    "season": 4, 
+    "tools": {
+        "balloon": {
+            "count": 0, 
+            "disabled": "item_balloon_d.png", 
+            "meta": {
+                "anchor": "balloon.png", 
+                "batch": "balloon_rope.png"
+            }, 
+            "normal": "item_balloon_n.png", 
+            "selected": "item_balloon_s.png", 
+            "type": "tool"
+        }, 
+        "block": {
+            "count": 0, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "cardboard": {
+            "count": 1, 
+            "disabled": "item_cardboard_d.png", 
+            "meta": {
+                "frame": "cardboard_box.png"
+            }, 
+            "normal": "item_cardboard_n.png", 
+            "selected": "item_cardboard_s.png", 
+            "type": "tool"
+        }, 
+        "elastic": {
+            "count": 0, 
+            "disabled": "item_carabiner_d.png", 
+            "meta": [], 
+            "normal": "item_carabiner_n.png", 
+            "selected": "item_carabiner_s.png", 
+            "type": "tool"
+        }, 
+        "teleport": {
+            "count": 0, 
+            "disabled": "item_teleport_d.png", 
+            "meta": {
+                "effectFrame": "teleport_ring.png", 
+                "frame": "teleport.png", 
+                "group": 1, 
+                "movable": true
+            }, 
+            "normal": "item_teleport_n.png", 
+            "selected": "item_teleport_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

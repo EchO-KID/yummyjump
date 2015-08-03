@@ -1,0 +1,627 @@
+{
+    "assets": {
+        "batch": [
+            "rainbow.png", 
+            "balloon_rope.png", 
+            "liana_texture.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:54", 
+    "graph": [
+        {
+            "defaultColor": [
+                207, 
+                255, 
+                230, 
+                255
+            ], 
+            "sprite": "season3_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "frame": "idle.png", 
+            "position": [
+                0, 
+                2
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "frame": "watermelon.png", 
+            "position": [
+                2.5, 
+                0.5
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                3, 
+                3
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "wood_box.png", 
+            "position": [
+                3.5, 
+                2.5
+            ], 
+            "type": "floatingPlatform"
+        }, 
+        {
+            "batch": "liana_texture.png", 
+            "count": 10, 
+            "density": 0.3, 
+            "endpos": [
+                8.05, 
+                1.94
+            ], 
+            "height": 0.1, 
+            "mouseMaxForce": 250, 
+            "overlap": 0.2, 
+            "projection": [
+                3, 
+                2.5
+            ], 
+            "startpos": [
+                4.96, 
+                1.94
+            ], 
+            "type": "chain"
+        }, 
+        {
+            "angle": 3.1415926535898, 
+            "color": [
+                177, 
+                173, 
+                197
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 1, 
+            "index": 2, 
+            "movable": false, 
+            "position": [
+                6, 
+                3.5, 
+                7, 
+                4
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                8, 
+                4
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "color": [
+                177, 
+                173, 
+                197
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 1, 
+            "index": 1, 
+            "movable": false, 
+            "position": [
+                9, 
+                1.5, 
+                10, 
+                2
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "angle": -1.5707963267949, 
+            "color": [
+                177, 
+                0, 
+                197
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 2, 
+            "index": 2, 
+            "movable": false, 
+            "position": [
+                0.5, 
+                0.5, 
+                1.5, 
+                1
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "angle": -1.5707963267949, 
+            "color": [
+                177, 
+                0, 
+                197
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 2, 
+            "index": 1, 
+            "movable": false, 
+            "position": [
+                1.5, 
+                3, 
+                2, 
+                4
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                9, 
+                4
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "darkness": "0.5", 
+            "position": [
+                2, 
+                1
+            ], 
+            "size": [
+                4, 
+                1
+            ], 
+            "speed": 0.4, 
+            "type": "shadow"
+        }, 
+        {
+            "points": [
+                [
+                    0, 
+                    1.5, 
+                    5, 
+                    2
+                ], 
+                [
+                    7.21, 
+                    -0.04, 
+                    7.45, 
+                    0.55, 
+                    7.88, 
+                    1.12, 
+                    8, 
+                    2, 
+                    9, 
+                    2, 
+                    9.14, 
+                    1.49, 
+                    9.32, 
+                    0.56, 
+                    10.01, 
+                    0.34, 
+                    10.03, 
+                    -0.01
+                ], 
+                [
+                    0, 
+                    0.55, 
+                    5, 
+                    0.55, 
+                    5.27, 
+                    0.25, 
+                    5.27, 
+                    0, 
+                    0, 
+                    0
+                ]
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "ground", 
+            "uid": 10
+        }, 
+        {
+            "color": [
+                186, 
+                223, 
+                205
+            ], 
+            "endPos": [
+                10, 
+                6
+            ], 
+            "opacity": "128", 
+            "sprite": "season_clouds.png", 
+            "startPos": [
+                0, 
+                6
+            ], 
+            "time": "10", 
+            "type": "infiniteSprite"
+        }, 
+        {
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "layer": "background", 
+            "points": [
+                0, 
+                0.5, 
+                0, 
+                1.5, 
+                4, 
+                1.5, 
+                4.42, 
+                0.51
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "texture"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                7, 
+                3
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                7, 
+                3
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                2.7, 
+                2.8
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                2.7, 
+                2.8
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                0.98, 
+                3.65
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                0.98, 
+                3.65
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82, 
+                255
+            ], 
+            "points": [
+                0, 
+                2, 
+                5, 
+                2, 
+                5.01, 
+                1.5, 
+                -0.02, 
+                1.5
+            ], 
+            "radius": "2", 
+            "type": "line"
+        }, 
+        {
+            "anchor": [
+                0.9, 
+                0.4
+            ], 
+            "frame": "liana_pilar1.png", 
+            "position": [
+                4.98, 
+                1.94
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.1, 
+                0.4
+            ], 
+            "frame": "liana_pilar2.png", 
+            "position": [
+                8.06, 
+                1.94
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_1.png", 
+            "position": [
+                2.1, 
+                2
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_2.png", 
+            "position": [
+                5.01, 
+                1.74
+            ], 
+            "rotation": 90, 
+            "scale": [
+                1, 
+                0.8
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_2.png", 
+            "position": [
+                1.19, 
+                2.01
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_1.png", 
+            "position": [
+                0.62, 
+                1.98
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "opacity": "90", 
+            "points": [
+                7.75, 
+                0, 
+                10.02, 
+                0, 
+                10.03, 
+                0.35, 
+                9.34, 
+                0.57, 
+                9.06, 
+                1.86, 
+                8.71, 
+                1.63, 
+                8.52, 
+                0.97
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture", 
+            "zorder": "grass"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82, 
+                255
+            ], 
+            "points": [
+                7.21, 
+                -0.01, 
+                7.42, 
+                0.51, 
+                7.9, 
+                1.13, 
+                8, 
+                2, 
+                9, 
+                2, 
+                9.34, 
+                0.55, 
+                10.02, 
+                0.36
+            ], 
+            "radius": "2", 
+            "type": "line"
+        }
+    ], 
+    "levelid": 15, 
+    "season": 3, 
+    "tools": {
+        "balloon": {
+            "count": 0, 
+            "disabled": "item_balloon_d.png", 
+            "meta": {
+                "anchor": "balloon.png", 
+                "batch": "balloon_rope.png"
+            }, 
+            "normal": "item_balloon_n.png", 
+            "selected": "item_balloon_s.png", 
+            "type": "tool"
+        }, 
+        "block": {
+            "count": 1, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "cardboard": {
+            "count": 1, 
+            "disabled": "item_cardboard_d.png", 
+            "meta": {
+                "density": 1, 
+                "frame": "cardboard_box.png"
+            }, 
+            "normal": "item_cardboard_n.png", 
+            "selected": "item_cardboard_s.png", 
+            "type": "tool"
+        }, 
+        "rope": {
+            "count": 0, 
+            "disabled": "item_rope_d.png", 
+            "meta": {
+                "anchor": "cloud.png", 
+                "batch": "rainbow.png", 
+                "endpos": [
+                    0, 
+                    0
+                ], 
+                "hook": "lollipop.png", 
+                "starpos": [
+                    0, 
+                    0
+                ], 
+                "type": "rope"
+            }, 
+            "normal": "item_rope_n.png", 
+            "selected": "item_rope_s.png", 
+            "type": "tool"
+        }, 
+        "teleport": {
+            "count": 0, 
+            "disabled": "item_teleport_d.png", 
+            "meta": {
+                "effectFrame": "teleport_ring.png", 
+                "frame": "teleport.png", 
+                "group": 1, 
+                "movable": true
+            }, 
+            "normal": "item_teleport_n.png", 
+            "selected": "item_teleport_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

@@ -1,0 +1,618 @@
+{
+    "assets": {
+        "batch": [
+            "rainbow.png", 
+            "balloon_rope.png", 
+            "liana_texture.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:54", 
+    "graph": [
+        {
+            "defaultColor": [
+                207, 
+                255, 
+                230, 
+                255
+            ], 
+            "sprite": "season3_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "frame": "idle.png", 
+            "initialImpulse": 0, 
+            "position": [
+                5.52, 
+                4.33
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "frame": "watermelon.png", 
+            "position": [
+                1, 
+                4.5
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                4, 
+                1
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                1, 
+                1
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                7, 
+                1
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "batch": "liana_texture.png", 
+            "count": 10, 
+            "density": 0.3, 
+            "endpos": [
+                7, 
+                4
+            ], 
+            "height": 0.1, 
+            "mouseMaxForce": 250, 
+            "overlap": 0.2, 
+            "projection": [
+                4, 
+                3
+            ], 
+            "startpos": [
+                5, 
+                4
+            ], 
+            "type": "chain"
+        }, 
+        {
+            "count": 7, 
+            "density": 0.3, 
+            "endpos": [
+                3.25, 
+                4.33
+            ], 
+            "frame": "chain_texture.png", 
+            "height": 0.2, 
+            "movable": false, 
+            "overlap": 0.3, 
+            "projection": [
+                0, 
+                0
+            ], 
+            "startpos": [
+                -0.67, 
+                4.33
+            ], 
+            "type": "chain"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "opacity": "90", 
+            "points": [
+                3.01, 
+                -0.01, 
+                3.28, 
+                -0.01, 
+                3.02, 
+                2.58, 
+                2.87, 
+                2.87, 
+                0.02, 
+                2.84, 
+                0.01, 
+                2.58, 
+                2.65, 
+                2.69
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture", 
+            "zorder": "grass"
+        }, 
+        {
+            "points": [
+                [
+                    2.88, 
+                    7.05, 
+                    2.9, 
+                    3.15, 
+                    0, 
+                    3, 
+                    0, 
+                    2.58, 
+                    2.64, 
+                    2.68, 
+                    3, 
+                    0, 
+                    3.48, 
+                    0, 
+                    3.49, 
+                    2.57, 
+                    8.57, 
+                    2.66, 
+                    8.66, 
+                    2.99, 
+                    3.48, 
+                    3, 
+                    3.62, 
+                    7.14
+                ], 
+                [
+                    5.64, 
+                    2.72, 
+                    6.19, 
+                    2.72, 
+                    6.27, 
+                    -0.02, 
+                    5.82, 
+                    0.01
+                ], 
+                [
+                    8.12, 
+                    3.1, 
+                    8.67, 
+                    3.1, 
+                    8.76, 
+                    -0.05, 
+                    8.31, 
+                    -0.02
+                ]
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "ground", 
+            "uid": 10
+        }, 
+        {
+            "color": [
+                186, 
+                223, 
+                205
+            ], 
+            "endPos": [
+                10, 
+                6
+            ], 
+            "opacity": "128", 
+            "sprite": "season_clouds.png", 
+            "startPos": [
+                0, 
+                6
+            ], 
+            "time": "10", 
+            "type": "infiniteSprite"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                8.13, 
+                3.23
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                8.13, 
+                3.23
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82, 
+                255
+            ], 
+            "points": [
+                -0.03, 
+                2.99, 
+                2.92, 
+                3.16, 
+                2.87, 
+                7.04
+            ], 
+            "radius": "2", 
+            "type": "line"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82, 
+                255
+            ], 
+            "points": [
+                3.63, 
+                7.06, 
+                3.48, 
+                3, 
+                8.11, 
+                3.01, 
+                8.11, 
+                3.09, 
+                8.67, 
+                3.11, 
+                8.78, 
+                -0.05
+            ], 
+            "radius": "2", 
+            "type": "line"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "opacity": "90", 
+            "points": [
+                6.09, 
+                0, 
+                6.28, 
+                0, 
+                6.19, 
+                2.61, 
+                8.16, 
+                2.65, 
+                8.31, 
+                -0.01, 
+                8.62, 
+                -0.03, 
+                8.55, 
+                1.57, 
+                8.26, 
+                2.76, 
+                5.95, 
+                2.69
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture", 
+            "zorder": "grass"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                2.31, 
+                2.44
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                2.31, 
+                2.44
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_2.png", 
+            "position": [
+                1.59, 
+                3.09
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                1.24, 
+                3.5
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                1.24, 
+                3.5
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_1.png", 
+            "position": [
+                1.89, 
+                3.1
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_2.png", 
+            "position": [
+                6.81, 
+                2.95
+            ], 
+            "scale": [
+                1, 
+                0.8
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_1.png", 
+            "position": [
+                4.81, 
+                2.99
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_1.png", 
+            "position": [
+                5.17, 
+                3
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_2.png", 
+            "position": [
+                5.7, 
+                2.98
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "layer": "background", 
+            "points": [
+                0, 
+                0, 
+                -0.02, 
+                0.86, 
+                4.06, 
+                1.37, 
+                7.62, 
+                0.55, 
+                8.33, 
+                0
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "texture"
+        }, 
+        {
+            "anchor": [
+                0.9, 
+                0.4
+            ], 
+            "frame": "liana_pilar1.png", 
+            "position": [
+                5.04, 
+                3.99
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.1, 
+                0.4
+            ], 
+            "frame": "liana_pilar2.png", 
+            "position": [
+                6.93, 
+                4.01
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }
+    ], 
+    "levelid": 14, 
+    "season": 3, 
+    "tools": {
+        "balloon": {
+            "count": 0, 
+            "disabled": "item_balloon_d.png", 
+            "meta": {
+                "anchor": "balloon.png", 
+                "batch": "balloon_rope.png"
+            }, 
+            "normal": "item_balloon_n.png", 
+            "selected": "item_balloon_s.png", 
+            "type": "tool"
+        }, 
+        "block": {
+            "count": 0, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "cardboard": {
+            "count": 1, 
+            "disabled": "item_cardboard_d.png", 
+            "meta": {
+                "density": 3.5, 
+                "frame": "cardboard_box.png"
+            }, 
+            "normal": "item_cardboard_n.png", 
+            "selected": "item_cardboard_s.png", 
+            "type": "tool"
+        }, 
+        "rope": {
+            "count": 0, 
+            "disabled": "item_rope_d.png", 
+            "meta": {
+                "anchor": "cloud.png", 
+                "batch": "rainbow.png", 
+                "endpos": [
+                    0, 
+                    0
+                ], 
+                "hook": "lollipop.png", 
+                "starpos": [
+                    0, 
+                    0
+                ], 
+                "type": "rope"
+            }, 
+            "normal": "item_rope_n.png", 
+            "selected": "item_rope_s.png", 
+            "type": "tool"
+        }, 
+        "teleport": {
+            "count": 5, 
+            "disabled": "item_teleport_d.png", 
+            "meta": {
+                "effectFrame": "teleport_ring.png", 
+                "frame": "teleport.png", 
+                "group": 1, 
+                "movable": true
+            }, 
+            "normal": "item_teleport_n.png", 
+            "selected": "item_teleport_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

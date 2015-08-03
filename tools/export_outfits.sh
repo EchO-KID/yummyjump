@@ -1,0 +1,32 @@
+./svgexport.py ../Assets/svg -o \
+    outfit_apple_hd \
+    outfit_bear_hd \
+    outfit_cancel_hd \
+    outfit_cat_hd \
+    outfit_chicken_hd \
+    outfit_cow_hd \
+    outfit_disabled_hd \
+    outfit_dog_hd \
+    outfit_lion_hd \
+    outfit_octopus_hd \
+    outfit_orange_hd \
+    outfit_penguin_hd \
+    outfit_pineapple_hd \
+    outfit_rabbit_hd \
+    outfit_strawberry_hd \
+    outfit_pig_hd \
+    apple \
+    bear \
+    cat \
+    chicken \
+    cow \
+    disabled \
+    dog \
+    lion \
+    octopus \
+    orange \
+    penguin \
+    pineapple \
+    rabbit \
+    pig \
+    strawberry

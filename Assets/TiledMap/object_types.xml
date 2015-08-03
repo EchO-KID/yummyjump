@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objecttypes>
+ <objecttype name="ground" color="#000000"/>
+ <objecttype name="rope" color="#996633"/>
+ <objecttype name="balloon" color="#00ffff"/>
+ <objecttype name="slider" color="#00ff00"/>
+ <objecttype name="coin" color="#ffff00"/>
+ <objecttype name="target" color="#ff0000"/>
+ <objecttype name="player" color="#0000ff"/>
+ <objecttype name="sprite" color="#800080"/>
+ <objecttype name="dancingSprite" color="#800080"/>
+ <objecttype name="path" color="#0000ff"/>
+ <objecttype name="polygon" color="#008080"/>
+ <objecttype name="line" color="#ff66ff"/>
+ <objecttype name="texture" color="#ccff66"/>
+ <objecttype name="scrollingTexture" color="#808000"/>
+ <objecttype name="infiniteSprite" color="#008000"/>
+ <objecttype name="bad" color="#804000"/>
+</objecttypes>

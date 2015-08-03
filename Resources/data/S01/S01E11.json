@@ -1,0 +1,504 @@
+{
+    "assets": {
+        "batch": [
+            "rainbow.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:51", 
+    "graph": [
+        {
+            "defaultColor": [
+                255, 
+                133, 
+                135, 
+                255
+            ], 
+            "sprite": "season1_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                7, 
+                4
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "aabb": [
+                0, 
+                3.5, 
+                10, 
+                7
+            ], 
+            "layer": "background", 
+            "repeatV": false, 
+            "texture": "stars_texture.png", 
+            "translation": [
+                0.01, 
+                0.01
+            ], 
+            "type": "scrollingTexture", 
+            "zorder": "backgroundTexture"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "flip": [
+                true, 
+                false
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                4, 
+                4
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                2, 
+                4
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                9, 
+                4
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "color": [
+                100, 
+                100, 
+                100
+            ], 
+            "layer": "background", 
+            "points": [
+                2.5, 
+                3.5, 
+                5.5, 
+                3.5, 
+                4.5, 
+                -0.5, 
+                2.5, 
+                -0.5
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "texture"
+        }, 
+        {
+            "color": [
+                180, 
+                180, 
+                180
+            ], 
+            "layer": "background", 
+            "points": [
+                5.5, 
+                3.5, 
+                5.5, 
+                -0.5, 
+                4.5, 
+                -0.5
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "texture"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "flip": [
+                true, 
+                false
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                2, 
+                1
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "flip": [
+                true, 
+                false
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                0, 
+                1
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "color": [
+                255, 
+                255, 
+                255
+            ], 
+            "layer": "background", 
+            "opacity": "40", 
+            "points": [
+                6.45, 
+                7.05, 
+                6.89, 
+                7.07, 
+                7.88, 
+                3.97, 
+                7.05, 
+                3.95, 
+                7.05, 
+                0.3, 
+                4.52, 
+                -0.58
+            ], 
+            "texture": "white_texture_128.png", 
+            "type": "texture", 
+            "zorder": "backSprites"
+        }, 
+        {
+            "color": [
+                255, 
+                255, 
+                255
+            ], 
+            "layer": "background", 
+            "opacity": "20", 
+            "points": [
+                6.87, 
+                7.11, 
+                7.2, 
+                7.09, 
+                8.86, 
+                4, 
+                7.86, 
+                4
+            ], 
+            "texture": "white_texture_128.png", 
+            "type": "texture", 
+            "zorder": "backSprites"
+        }, 
+        {
+            "color": [
+                100, 
+                100, 
+                100
+            ], 
+            "layer": "background", 
+            "points": [
+                7.5, 
+                4, 
+                9.5, 
+                4, 
+                9.5, 
+                0, 
+                7.5, 
+                0
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "texture"
+        }, 
+        {
+            "darkness": "0.5", 
+            "position": [
+                8.5, 
+                1.5
+            ], 
+            "size": [
+                2, 
+                3.5
+            ], 
+            "speed": 0.3, 
+            "type": "shadow"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_1.png", 
+            "position": [
+                4, 
+                4
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_1.png", 
+            "position": [
+                4, 
+                4
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "frame": "mount_3.png", 
+            "position": [
+                4, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "frame": "mount_3.png", 
+            "position": [
+                4, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_2.png", 
+            "position": [
+                1, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_2.png", 
+            "position": [
+                1, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "frame": "cake.png", 
+            "position": [
+                1, 
+                1
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "frame": "cupcake.png", 
+            "position": [
+                3, 
+                1
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "cupcake.png", 
+            "position": [
+                7, 
+                1
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "idle.png", 
+            "position": [
+                2, 
+                4
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "frame": "cupcake.png", 
+            "position": [
+                8, 
+                4
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "darkness": "0.5", 
+            "position": [
+                4, 
+                1.5
+            ], 
+            "size": [
+                3, 
+                3.5
+            ], 
+            "speed": 0.3, 
+            "type": "shadow"
+        }, 
+        {
+            "points": [
+                [
+                    2, 
+                    3.25, 
+                    6, 
+                    4
+                ], 
+                [
+                    7, 
+                    3.25, 
+                    10, 
+                    4
+                ], 
+                [
+                    4, 
+                    0, 
+                    0, 
+                    0, 
+                    0, 
+                    1, 
+                    4, 
+                    1
+                ], 
+                [
+                    5, 
+                    0, 
+                    9, 
+                    0, 
+                    9, 
+                    2, 
+                    8, 
+                    2, 
+                    8, 
+                    1, 
+                    5, 
+                    1
+                ]
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "ground", 
+            "uid": 10
+        }
+    ], 
+    "levelid": 11, 
+    "season": 1, 
+    "tools": {
+        "block": {
+            "count": 0, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "rope": {
+            "count": 2, 
+            "disabled": "item_rope_d.png", 
+            "meta": {
+                "anchor": "cloud.png", 
+                "batch": "rainbow.png", 
+                "endpos": [
+                    0, 
+                    0
+                ], 
+                "hook": "lollipop.png", 
+                "starpos": [
+                    0, 
+                    0
+                ], 
+                "type": "rope"
+            }, 
+            "normal": "item_rope_n.png", 
+            "selected": "item_rope_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

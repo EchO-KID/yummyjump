@@ -1,0 +1,57 @@
+//////////////////////////////////// DEBUG /////////////////////////////////////////
+
+$#include "console/command.h"
+$#include "console/console.h"
+$#include "console/luaconsole.h"
+$#include "debug/debuglayer.h"
+
+/// Create a vector of string in lua:
+/// local vec = std.vector_std__string_:new_local()
+namespace std {
+    class vector {
+        TOLUA_TEMPLATE_BIND(T, std::string)
+
+        void clear();
+        int size() const;
+
+        const T& operator[](int index) const;
+        T& operator[](int index);
+        void push_back(T val);
+        
+        vector();
+        ~vector();
+    };
+}
+
+namespace pix2d_console
+{
+    /// We must provide the base class Console for LuaConsole to be bind correctly
+    /// Console is an abstract class so constructors are not binded
+    class Console : public CCNode {
+        bool close();
+    };
+
+    class LuaConsole : public Console {
+        static LuaConsole *create(const char *ip, int port);
+    };
+
+    class Command {
+        Command(void);
+        ~Command(void);
+        /// virtual bool reloadLevel(); /// DEPRECATED. We now use lua to load level
+        /// virtual bool reloadLevel(const char *data); /// DEPRECATED We now use lua to load level
+        /// void updateSpriteFrames(const char *plist_data, const char *texture_data); /// DEPRECATED. Now we use refreshAssets
+        void refreshAssets(std::string &repo, std::vector<std::string> &assets);
+        void setDebugParams(bool showPhysicsDraw,bool showStats,bool zoomOutScene);
+    };
+}
+
+namespace pix2d {
+    class DebugSettings {
+    public:
+        static DebugSettings *getInstance();
+        bool showPhysicsDraw;
+        bool showStats;
+        bool zoomOutScene;
+    }
+}

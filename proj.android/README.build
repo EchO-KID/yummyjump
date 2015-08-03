@@ -1,0 +1,5 @@
+Debug build
+# make 
+
+Release build
+# make clean && make release
