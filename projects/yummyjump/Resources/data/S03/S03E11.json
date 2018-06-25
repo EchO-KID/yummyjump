@@ -1,0 +1,505 @@
+{
+    "assets": {
+        "batch": [
+            "rainbow.png", 
+            "balloon_rope.png", 
+            "liana_texture.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:54", 
+    "graph": [
+        {
+            "defaultColor": [
+                207, 
+                255, 
+                230, 
+                255
+            ], 
+            "sprite": "season3_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "frame": "idle.png", 
+            "initialImpulse": 0, 
+            "position": [
+                1, 
+                2.5
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "frame": "watermelon.png", 
+            "position": [
+                8, 
+                1
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                9, 
+                4
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                4, 
+                2
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                8, 
+                3
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "angle": 0, 
+            "color": [
+                255, 
+                255, 
+                0
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 1, 
+            "index": 1, 
+            "movable": false, 
+            "position": [
+                1, 
+                1, 
+                2, 
+                2
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "angle": 0, 
+            "color": [
+                255, 
+                255, 
+                0
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 1, 
+            "index": 2, 
+            "movable": true, 
+            "position": [
+                3, 
+                1, 
+                4, 
+                2
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "angle": 0, 
+            "color": [
+                255, 
+                0, 
+                0
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 2, 
+            "index": 1, 
+            "movable": true, 
+            "position": [
+                5, 
+                1, 
+                6, 
+                2
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "angle": 3.1415926535898, 
+            "color": [
+                255, 
+                0, 
+                0
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 2, 
+            "index": 2, 
+            "movable": true, 
+            "position": [
+                7, 
+                5, 
+                8, 
+                6
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "angle": 3.3161255787892, 
+            "frame": "spear.png", 
+            "position": [
+                9.48, 
+                1.18
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "angle": 2.3561944901923, 
+            "frame": "spear.png", 
+            "position": [
+                7.43, 
+                3.67
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "points": [
+                [
+                    6.02, 
+                    5.9, 
+                    5.68, 
+                    4.6, 
+                    5.99, 
+                    3.36, 
+                    6.37, 
+                    2.33, 
+                    6, 
+                    0, 
+                    10, 
+                    0, 
+                    10, 
+                    1, 
+                    8.32, 
+                    0.78, 
+                    7.61, 
+                    0.87, 
+                    7.93, 
+                    2.88, 
+                    6.81, 
+                    3.97, 
+                    6.92, 
+                    5.76
+                ]
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "ground", 
+            "uid": 10
+        }, 
+        {
+            "color": [
+                186, 
+                223, 
+                205
+            ], 
+            "endPos": [
+                10, 
+                6
+            ], 
+            "opacity": "128", 
+            "sprite": "season_clouds.png", 
+            "startPos": [
+                0, 
+                6
+            ], 
+            "time": "10", 
+            "type": "infiniteSprite"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                4.91, 
+                2.27
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                4.91, 
+                2.27
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                2.56, 
+                1.97
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                2.56, 
+                1.97
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                1.27, 
+                3.1
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                1.27, 
+                3.1
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "layer": "background", 
+            "points": [
+                10, 
+                4, 
+                10, 
+                1, 
+                8.32, 
+                0.74, 
+                7.57, 
+                0.84, 
+                7.91, 
+                2.84, 
+                6.77, 
+                4.01, 
+                6.82, 
+                4.61, 
+                8.44, 
+                4.54
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "texture"
+        }, 
+        {
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "layer": "background", 
+            "points": [
+                6.28, 
+                1.61, 
+                6, 
+                0, 
+                1, 
+                0, 
+                1.91, 
+                0.53, 
+                4.73, 
+                0.83
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "texture"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82, 
+                255
+            ], 
+            "points": [
+                6.02, 
+                -0.02, 
+                6.39, 
+                2.31, 
+                6.02, 
+                3.29, 
+                5.67, 
+                4.6, 
+                6.02, 
+                5.91, 
+                6.9, 
+                5.77, 
+                6.79, 
+                4.01, 
+                7.96, 
+                2.85, 
+                7.6, 
+                0.9, 
+                8.32, 
+                0.77, 
+                10.03, 
+                1.02
+            ], 
+            "radius": "2", 
+            "type": "line"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "opacity": "90", 
+            "points": [
+                6.26, 
+                4.33, 
+                7.21, 
+                2.48, 
+                7, 
+                0, 
+                10, 
+                0, 
+                10, 
+                0.98, 
+                8.31, 
+                0.74, 
+                7.58, 
+                0.85, 
+                7.95, 
+                2.82, 
+                6.78, 
+                4.02, 
+                6.93, 
+                5.74, 
+                6.52, 
+                5.81
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture", 
+            "zorder": "grass"
+        }
+    ], 
+    "levelid": 11, 
+    "season": 3, 
+    "tools": {
+        "balloon": {
+            "count": 0, 
+            "disabled": "item_balloon_d.png", 
+            "meta": {
+                "anchor": "balloon.png", 
+                "batch": "balloon_rope.png"
+            }, 
+            "normal": "item_balloon_n.png", 
+            "selected": "item_balloon_s.png", 
+            "type": "tool"
+        }, 
+        "block": {
+            "count": 1, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "cardboard": {
+            "count": 0, 
+            "disabled": "item_cardboard_d.png", 
+            "meta": {
+                "density": 3.5, 
+                "frame": "cardboard_box.png"
+            }, 
+            "normal": "item_cardboard_n.png", 
+            "selected": "item_cardboard_s.png", 
+            "type": "tool"
+        }, 
+        "rope": {
+            "count": 0, 
+            "disabled": "item_rope_d.png", 
+            "meta": {
+                "anchor": "cloud.png", 
+                "batch": "rainbow.png", 
+                "endpos": [
+                    0, 
+                    0
+                ], 
+                "hook": "lollipop.png", 
+                "starpos": [
+                    0, 
+                    0
+                ], 
+                "type": "rope"
+            }, 
+            "normal": "item_rope_n.png", 
+            "selected": "item_rope_s.png", 
+            "type": "tool"
+        }, 
+        "teleport": {
+            "count": 0, 
+            "disabled": "item_teleport_d.png", 
+            "meta": {
+                "effectFrame": "teleport_ring.png", 
+                "frame": "teleport.png", 
+                "group": 1, 
+                "movable": true
+            }, 
+            "normal": "item_teleport_n.png", 
+            "selected": "item_teleport_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

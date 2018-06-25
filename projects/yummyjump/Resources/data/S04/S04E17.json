@@ -1,0 +1,600 @@
+{
+    "assets": {
+        "batch": [
+            "balloon_rope.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:55", 
+    "graph": [
+        {
+            "defaultColor": [
+                229, 
+                237, 
+                246, 
+                255
+            ], 
+            "sprite": "season4_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "frame": "idle.png", 
+            "initialImpulse": 0, 
+            "position": [
+                1.04, 
+                3.85
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "frame": "ice_cream_cone.png", 
+            "position": [
+                8.42, 
+                0.45
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "position": [
+                1.04, 
+                3.26, 
+                2.04, 
+                4.26
+            ], 
+            "type": "elasticRope"
+        }, 
+        {
+            "frame": "ice_cream_bar.png", 
+            "position": [
+                6.01, 
+                4.98
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "apparition": [
+                [
+                    3.2, 
+                    3.25, 
+                    2
+                ], 
+                [
+                    3.2, 
+                    2.25, 
+                    2
+                ]
+            ], 
+            "apparitionLoop": true, 
+            "frame": "ice_cream_bar.png", 
+            "position": [
+                3.2, 
+                2.75
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "angle": 1.5707963267949, 
+            "color": [
+                177, 
+                173, 
+                197
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 1, 
+            "index": 1, 
+            "movable": false, 
+            "position": [
+                3.08, 
+                0.11, 
+                3.58, 
+                1.11
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "frame": "snow_ground.png", 
+            "friction": "0", 
+            "points": [
+                2.02, 
+                1.9, 
+                4.77, 
+                2.82, 
+                5.89, 
+                2.49
+            ], 
+            "type": "iceGround"
+        }, 
+        {
+            "apparition": [
+                [
+                    5, 
+                    3.75, 
+                    2
+                ], 
+                [
+                    5, 
+                    2.75, 
+                    2
+                ]
+            ], 
+            "apparitionLoop": true, 
+            "frame": "ice_cream_bar.png", 
+            "position": [
+                5, 
+                3.25
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "angle": -1.5707963267949, 
+            "color": [
+                177, 
+                173, 
+                197
+            ], 
+            "effectFrame": "teleport_ring.png", 
+            "frame": "teleport.png", 
+            "group": 1, 
+            "index": 2, 
+            "movable": false, 
+            "position": [
+                6.55, 
+                0.78, 
+                7.05, 
+                1.78
+            ], 
+            "type": "teleport"
+        }, 
+        {
+            "frame": "snow_ground.png", 
+            "friction": "0", 
+            "points": [
+                7.28, 
+                3.64, 
+                10.06, 
+                4.63
+            ], 
+            "type": "iceGround"
+        }, 
+        {
+            "angle": 3.3161255787892, 
+            "frame": "spear.png", 
+            "position": [
+                6.65, 
+                2.53
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "angle": 2.8972465583106, 
+            "frame": "spear.png", 
+            "position": [
+                5.51, 
+                2.74
+            ], 
+            "type": "spear"
+        }, 
+        {
+            "frame": "snow_ground.png", 
+            "friction": "0", 
+            "points": [
+                6.04, 
+                2.27, 
+                7.2, 
+                2.47
+            ], 
+            "type": "iceGround"
+        }, 
+        {
+            "color": [
+                255, 
+                255, 
+                255
+            ], 
+            "points": [
+                [
+                    2.06, 
+                    1.83, 
+                    4.78, 
+                    2.75, 
+                    5.87, 
+                    2.43, 
+                    6.03, 
+                    2.22, 
+                    7.32, 
+                    2.44, 
+                    7.31, 
+                    3.53, 
+                    10.18, 
+                    4.61, 
+                    10.07, 
+                    2.65, 
+                    7.42, 
+                    2.14, 
+                    5.95, 
+                    1.43, 
+                    5.76, 
+                    0.62, 
+                    5.51, 
+                    1.29, 
+                    5.4, 
+                    0.96, 
+                    5.23, 
+                    1.23, 
+                    5.33, 
+                    0.6, 
+                    4.94, 
+                    1.16, 
+                    4.68, 
+                    0.36, 
+                    4.66, 
+                    1.1, 
+                    4.54, 
+                    0.48, 
+                    4.37, 
+                    1.04, 
+                    3.9, 
+                    -0.03, 
+                    3.91, 
+                    1.03
+                ]
+            ], 
+            "texture": "ground_texture_season4.png", 
+            "type": "ground", 
+            "uid": 10
+        }, 
+        {
+            "color": [
+                215, 
+                222, 
+                227
+            ], 
+            "endPos": [
+                10, 
+                6
+            ], 
+            "opacity": "128", 
+            "sprite": "season_clouds.png", 
+            "startPos": [
+                0, 
+                6
+            ], 
+            "time": "10", 
+            "type": "infiniteSprite"
+        }, 
+        {
+            "aabb": [
+                0, 
+                3.46, 
+                10.01, 
+                7
+            ], 
+            "layer": "background", 
+            "repeatV": false, 
+            "texture": "season4_background_pattern.png", 
+            "translation": [
+                0.01, 
+                -0.01
+            ], 
+            "type": "scrollingTexture", 
+            "zorder": "backgroundTexture"
+        }, 
+        {
+            "flip": [
+                true, 
+                false
+            ], 
+            "frame": "season4_tree.png", 
+            "position": [
+                8.33, 
+                2.44
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.5, 
+                0.6
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "flip": [
+                true, 
+                false
+            ], 
+            "frame": "season4_tree.png", 
+            "position": [
+                8.33, 
+                2.44
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.5, 
+                0.6
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                7.6, 
+                2.94
+            ], 
+            "scale": [
+                0.8, 
+                1.2
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                7.6, 
+                2.94
+            ], 
+            "scale": [
+                0.8, 
+                1.2
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                2.37, 
+                2.78
+            ], 
+            "scale": [
+                1.3, 
+                1.5
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                2.37, 
+                2.78
+            ], 
+            "scale": [
+                1.3, 
+                1.5
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                4.84, 
+                2.64
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "season4_tree.png", 
+            "position": [
+                4.84, 
+                2.64
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "color": [
+                153, 
+                234, 
+                255, 
+                255
+            ], 
+            "points": [
+                2.38, 
+                1.95, 
+                2.05, 
+                1.83, 
+                3.91, 
+                1.03, 
+                3.89, 
+                -0.03, 
+                4.37, 
+                1.03, 
+                4.55, 
+                0.45, 
+                4.64, 
+                1.12, 
+                4.68, 
+                0.35, 
+                4.94, 
+                1.18, 
+                5.33, 
+                0.6, 
+                5.22, 
+                1.24, 
+                5.4, 
+                0.95, 
+                5.51, 
+                1.28, 
+                5.75, 
+                0.62, 
+                5.95, 
+                1.42, 
+                7.41, 
+                2.13, 
+                10.06, 
+                2.64
+            ], 
+            "radius": "1", 
+            "type": "line"
+        }, 
+        {
+            "opacity": "130", 
+            "points": [
+                7.82, 
+                3.72, 
+                8.17, 
+                2.27, 
+                8.5, 
+                2.33, 
+                8.52, 
+                3.01, 
+                9.07, 
+                2.46, 
+                9.23, 
+                2.47, 
+                9.03, 
+                4.16
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture"
+        }, 
+        {
+            "opacity": "130", 
+            "points": [
+                3.81, 
+                2.42, 
+                4.15, 
+                0.53, 
+                4.26, 
+                0.78, 
+                4.24, 
+                1.45, 
+                4.57, 
+                0.46, 
+                4.65, 
+                1.05, 
+                4.4, 
+                2.61
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture"
+        }
+    ], 
+    "levelid": 17, 
+    "scripts": [
+        "season4"
+    ], 
+    "season": 4, 
+    "tools": {
+        "balloon": {
+            "count": 0, 
+            "disabled": "item_balloon_d.png", 
+            "meta": {
+                "anchor": "balloon.png", 
+                "batch": "balloon_rope.png"
+            }, 
+            "normal": "item_balloon_n.png", 
+            "selected": "item_balloon_s.png", 
+            "type": "tool"
+        }, 
+        "block": {
+            "count": 0, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "cardboard": {
+            "count": 1, 
+            "disabled": "item_cardboard_d.png", 
+            "meta": {
+                "frame": "cardboard_box.png"
+            }, 
+            "normal": "item_cardboard_n.png", 
+            "selected": "item_cardboard_s.png", 
+            "type": "tool"
+        }, 
+        "teleport": {
+            "count": 0, 
+            "disabled": "item_teleport_d.png", 
+            "meta": {
+                "effectFrame": "teleport_ring.png", 
+                "frame": "teleport.png", 
+                "group": 1, 
+                "movable": true
+            }, 
+            "normal": "item_teleport_n.png", 
+            "selected": "item_teleport_s.png", 
+            "type": "tool"
+        }, 
+        "trampoline": {
+            "count": 1, 
+            "disabled": "item_umbrella_d.png", 
+            "meta": {
+                "addSprite": {
+                    "frame": "beach_umbrella_leg.png", 
+                    "position": [
+                        0.5, 
+                        0
+                    ], 
+                    "rotation": -90, 
+                    "zorder": -1
+                }, 
+                "frame": "beach_umbrella.png", 
+                "movable": true, 
+                "restitution": 2
+            }, 
+            "normal": "item_umbrella_n.png", 
+            "selected": "item_umbrella_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

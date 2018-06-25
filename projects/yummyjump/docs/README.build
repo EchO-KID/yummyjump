@@ -1,0 +1,312 @@
+1. Create multi-platform project
+--------------------------------
+$ cd COCOS2D_HOME/tools/project-creator
+$ ./create_project.py -project PROJECT_NAME -package PACKAGE_NAME -language PROGRAMING_LANGUAGE
+
+1.1 Troubleshooting iOS build
+---------------------------------
+
+* The project doesn't build for the simulator
+Remove the -all_load from the "Other Linker Flag" build properties in Xcode and rebuild. You should might have to re-enable this flag for device build.
+
+* 64bit build 
+cocos2dx 2 prebuild liba are 32bit build
+Remove libcurl.a from the project 
+Remove extension/network folder from the project 
+
+Note on the xcode project. If the 
+
+* Manually install app on the simulator
+cp the app in an already install app in 
+/Users/lzubiaur/Library/Application Support/iPhone Simulator/7.0.3/Applications/
+Run the iphone simulator manually or unsing Xcode 
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app/Contents/MacOS/iPhone Simulator
+
+2. Android project
+------------------
+2.1 Configure the environment
+-----------------------------
+Add the following in ~/.bash_profile
+export NDK_TOOLCHAIN_VERSION=4.6
+export TOOLCHAIN_VERSION=4.6
+export NDK_ROOT=~/Dev/android/android-ndk
+export ANDROID_SDK_ROOT=~/Dev/android/android-sdk
+export COCOS2DX_ROOT=~/Dev/cocos2d/cocos2d-x-cocos2d-x-2.2.1
+
+Note: TOOLCHAIN_VERSION seems to be required in previous android ndk (NDK_TOOLCHAIN_VERSION might be enough in newer ndk version)
+Note: ndk toolchain version can be found in 
+
+2.2 Update the project
+----------------------
+Update the project to use a target android sdk
+$ android update project -p ./ --target android-10
+$ android update project -p ../../../cocos2dx/platform/android/java --target android-10
+
+2.3 Build android project
+------------------------
+# Builds the native c++ code
+$ ./build_native.sh
+
+# Builds some Java files and generates the executable
+$ ant debug
+or 
+$ and release
+
+$ cd bin
+
+# Installs the executable on a device (if attached), otherwise on an emulator (if it is running)
+$ adb install -r MyGame-debug.apk
+
+Note: do adb install -r to install without uninstalling before
+
+2.4 Customize android build
+---------------------------
+Edit jni/Android.mk
+
+# support for C++11
+LOCAL_CFLAGS := -std=gnu++11
+
+# Add cpp file extension        
+LOCAL_CPP_EXTENSION := .cc .cpp .cxx
+
+Set the preprocessor directive in jni/Application.mk
+
+2.5 Debug android
+-----------------
+Show app log:
+adb logcat | grep cocos2d
+
+3. Release build
+----------------
+Remove Resources/ui folder (assets for debug layer)
+Disable cocos2d and pix2d debug preprocessor directives in proj.android/jni/Application.mk
+    -DCOCOS2D_DEBUG=1 -DCOCOS2D_CONSOLE_DEBUG=1 -DPIX2D_DEBUG=1
+Remove console and LuaSocket source files from Android.mk
+ 52 ../../Classes/console/command.cpp \
+ 53 ../../Classes/console/console.cpp \
+ 54 ../../Classes/console/luaconsole.cpp \
+ 55 ../../Classes/console/tolua/command.cpp \
+ 64 ../../libs/LuaSocket/buffer.h \
+ 65 ../../libs/LuaSocket/except.h \
+ 66 ../../libs/LuaSocket/inet.h \
+ 67 ../../libs/LuaSocket/io.h \
+ 68 ../../libs/LuaSocket/luasocket.h \
+ 69 ../../libs/LuaSocket/mime.h \
+ 70 ../../libs/LuaSocket/options.h \
+ 71 ../../libs/LuaSocket/select.h \
+ 72 ../../libs/LuaSocket/socket.h \
+ 73 ../../libs/LuaSocket/tcp.h \
+ 74 ../../libs/LuaSocket/timeout.h \
+ 75 ../../libs/LuaSocket/udp.h \
+ 76 ../../libs/LuaSocket/unix.h \
+ 77 ../../libs/LuaSocket/usocket.h \
+
+Remove INTERNET permission in the manifest file (AndroidManifest.xml)
+Run the clean_bundle.sh script 
+# tools/clean_bundle.sh proj.android/bin/gameplay-debug.apk android 
+
+Change android project package name 
+-----------------------------------
+Change the attribute "package" in AndroidManifest.xml. e.g. com.pix2d.games -> com.voodoocactus.games
+Change the package folder structure in src. e.g. com/pix2d/games -> com/voodoocactus/games
+Change all references to former pacakge in src.
+Change all references in any jni classes (e.g. Classes/platform/android/native.h)
+
+4. Set up Lua Mac OS X project
+------------------------------
+Using Cocos2dx 2.2.1 Luajit crashes at runtime when running x86_64 build so we 
+have to build a i386 version of the app.
+Further info here: http://discuss.cocos2d-x.org/t/lua-support-with-mac-os-x/7206
+
+Copy the mac project template into your porject 
+
+cp $COCOS2D_HOME/template/multi-platform-cpp/proj.mac ~/Dev/cocos2d/cocos2d-x-cocos2d-x-2.2.1/projects/gameplay
+
+Add the following folders in the project:
+- Classes
+- Resources/* (as reference folder aka blue folder)
+- libs (user libraries)
+- $COCOS2D_HOME/lua/cocos2dx_support
+- $COCOS2D_HOME/lua/luajit/proj.mac 
+- $COCOS2D_HOME/lua/luajit/include 
+- $COCOS2D_HOME/lua/script
+- $COCOS2D_HOME/lua/tolua
+- $COCOS2D_HOME/libwebsockets/mac (see Build LibWebsockets below)
+
+In the project's "build settings" set the following parameters
+- Architectures: 32-bit Intel (386)
+- Valid Architectures: i386
+- User Header Search Paths: "$(SRCROOT)/../Classes"
+- Header Search Paths: "$(SRCROOT)/../../../external/lua/src" "$(SRCROOT)/../../../external/lua/tolua" $(SRCROOT)/../../../external/lua/cocos2dx_support "$(SRCROOT)/../libs"
+
+In the cocos2dx "build settings" set the following:
+- Architectures: Universal (32/64-bit Intel) (i386, i386)
+- Valid Architectures: i386, x86_64
+
+Build the LuaJit library
+------------------------
+Run the script $COCOS2D_HOME/scripting/lua/luajit/build_mac.sh and include proj.mac in the project.
+
+Build LibWebsockets 
+-------------------
+git clone git://git.libwebsockets.org/libwebsockets
+cd libwebsockets
+mkdit Build
+cd build
+make -DCMAKE_OSX_ARCHITECTURES=i386 -DLWS_WITH_SSL:BOOL=OFF -DLWS_SSL_CLIENT_USE_OS_CA_CERTS=0 -DLWS_WITHOUT_DAEMONIZE:BOOL=ON ..
+
+Create the $COCOS2D_HOME/external/libwebsockets/mac/lib and include directories.
+Copy libwebsockets.h in the include directory and the static library in lib
+cp ../lib/libwebsockets.a $COCOS2D_HOME/external/libwebsockets/mac/lib
+
+5. AdMob
+--------------
+References: 
+    http://discuss.cocos2d-x.org/t/cocos3-0-tutorial-integrate-admob-google-play-services-with-cocos2d-x-v3-0-final/12798
+    https://developers.google.com/mobile-ads-sdk/docs/admob/ios/quick-start#adding_the_sdk_to_your_xcode_project
+    http://www.apusstudio.com/2014/04/cocos2d-x-with-admob-iad-mediation-in.html
+    http://www.apusstudio.com/2014/05/cocos2d-x-with-admob-iad-mediation-in-2.html
+
+5.1 iOS Integration
+-------------------
+5.1.1 Add the AdMob SDK
+---------------------
+Download the lastest AdMob SDK and unzip the archive in the project. Add the root directory to the project.
+Add the following frameworks
+AdSupport
+AudioToolbox (already added)
+AVFoundation (already added)
+CoreGraphics (already added)
+CoreTelephony
+EventKit
+EventKitUI
+MessageUI
+StoreKit
+SystemConfiguration
+
+5.1.2 Adding iAd Adapter
+----------------------
+Download the iAd adapter from https://developers.google.com/mobile-ads-sdk/docs/admob/mediation-networks and add the extracted
+files to the project.
+Add the following frameworks:
+iAd.framework
+MediaPlayer.framework (really required?)
+eameController.framework (really required?) 
+
+5.1.3 Add the code to show/hide the Banner
+----------------------------------------
+follow the instructions below to add the BannerViewController and to update the AppController 
+http://www.apusstudio.com/2014/05/cocos2d-x-with-admob-iad-mediation-in-2.html
+
+5.1.4 Create a new App id 
+-----------------------
+
+a) Sign in to the new AdMob using this URL: https://apps.admob.com/33Monetize -> “+Monetize new app”
+
+b) Select an app to monetize:
+Add new app manually -> Platform Android -> add app
+
+c) Select ad format and name ad unit:
+Banner -> Ad unit name : test app ads -> Save .
+Important: Save the “Ad unit ID” for later use.
+
+Yummy Jump (iOS)
+Ad unit ID: ca-app-pub-2871585208249973/1957300040
+Ad unit name: test app ads
+
+Yummy Jump (android)
+Ad unit ID: ca-app-pub-2871585208249973/7724632048
+Ad unit name: app test
+
+Update the BannerViewController.m to replace the app id with your id.
+
+5.2 Android integration
+-----------------------
+5.2.1 Install the Google Play Services. 
+---------------------------------------
+Launch the Android SDK manager ($ANDROID_SDK_HOME/tools/android) and install the following packages.
+* last SDK tools and platform
+* "Google Play Services" 
+* "Google Play Services Foryo" (optional)
+
+5.2.2 Integrate the Google Play Services library 
+------------------------------------------------
+The Google Play Services library can be integrate to the application project as an library dependency.
+* Make a copy of the Google Play Service library folder (“ANDROID_SDK_HOME\extras\google\google_play_services\libproject\google-play-services_lib”).
+* Update the Google Play Service project 
+# android update lib-project --path <path-to-google-play-services-project> --target <android-id>
+
+Edit the application's manifest (AndroidManifest.xml)
+<manifest> 
+...
+<!-- Include required permissions for Google Mobile Ads to run-->
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<application>
+...
+<!--Include the AdActivity configChanges and theme. -->
+<activity android:name="com.google.android.gms.ads.AdActivity" 
+    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" 
+    android:theme="@android:style/Theme.Translucent"/>
+<!--This meta-data tag is required to use Google Play Services.-->
+<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+</application>
+</manifest>
+
+Reference the Google Play Service as a dependency library
+# android update project --target <android-id> --path <path-to-application-project> --library <path-to-google-play-services-project>
+This should update at least the project.properties file and add an entry referencing the Google Play Services project. Something like below should have been added to project.properties.
+...
+android.library.reference.3=../../google-play-services
+
+Note: In order to run AdMob using Google Play Service you'll have to update your project to a decent API level. We had to upgrade from API level 10 to 16 (android 4.1.2) to get AdMob working.
+# android update project --path . --target android-16
+
+You should now be able to use Google Play Services api to your porject.
+
+UnityAds
+--------
+Enable manifest merging so the library's manifest is included into the app project. Add the follwing property in project.properties
+manifestmerger.enabled=true
+
+If using proguard in release mode build might fail because of class BuildConfig duplicated. This is because the jar libs/UnityAds.jar already contains the class BuildConfig.class. Remove the BuildConfig.class from the jar as bellow.
+# zip libs/UnityAds.jar -d com/unity3d/ads/android/BuildConfig.class
+
+Amazon Ads
+----------
+1. Incorporate the API into Your Project 
+Copy the Amazon Ads jar into your app project libs folder. 
+# cp AMAZON_SDK/Android/Ads/lib/amazon-ads-5.4.146.jar PROJECT_HOME/libs
+
+2. Update the Android manifest
+<activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+Enable geographic location targeting
+
+bbc7d8a2817b433eb39b59e8651debae
+
+References
+----------
+http://developer.android.com/tools/projects/projects-cmdline.html
+
+6.1 UnityAds
+-----------------------
+6.1.1 iOS Integration
+---------------------
+Download prebuild package: https://github.com/Applifier/unity-ads-sdk/archive/master.zip
+Add both UnityAds.bundle and UnityAds.framework to the project 
+Add the following system frameworks:
+SystemConfiguration.framework 
+CoreMedia.framework
+
+References:
+http://unityads.unity3d.com/help/Documentation%20for%20Publishers/Integration-Guide-for-iOS
+
+

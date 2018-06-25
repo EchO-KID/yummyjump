@@ -1,0 +1,33 @@
+Third party libraries
+---------------------
+Box2d
+poly2tri
+clipper
+Lua
+i18n https://github.com/kikito/i18n.lua
+
+JSON4Lua: JSON encoding / decoding support for the Lua language.
+Author: Craig Mason-Jones
+Homepage: http://json.luaforge.net/
+
+Third party assets
+------------------
+Fonts
+-----
+Chewy font (google)
+TrashHand font
+
+Sounds 
+------
+soundjay.com: magic-chime-01,magic-chime-02.mp3
+coin01.mp3: http://opengameart.org/content/completion-Sounds
+kenney.nl: cardSlide3.mp3,switch34.mp3,switch26.mp3,click4.mp3,fail.mp3
+swishes: /Users/lzubiaur/Dev/Assets/sounds/effects/swishes/swish-10.wav
+warping.wav - http://www.freesound.org/people/LloydEvans09/
+negative_2.wav - Lokif - Public Domain
+crrect_answer2.mp3 crrect_answer3.mp3 - taira-komori.jpn.org - Attribution
+boing1.mp3, boing2.mp3 - http://www.freesound.org/people/plingativator/ - Attribution (credits no required)
+
+Musics
+-------
+background.mp3 - Alphonse Zubiaur

@@ -1,0 +1,786 @@
+{
+    "assets": {
+        "batch": [
+            "rainbow.png", 
+            "balloon_rope.png", 
+            "liana_texture.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:54", 
+    "graph": [
+        {
+            "defaultColor": [
+                207, 
+                255, 
+                230, 
+                255
+            ], 
+            "sprite": "season3_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "frame": "idle.png", 
+            "position": [
+                0, 
+                3
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "frame": "watermelon.png", 
+            "position": [
+                9, 
+                3
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                7, 
+                3
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                5, 
+                3
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "avocado.png", 
+            "position": [
+                3.98, 
+                5.01
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "addSprite": {
+                "frame": "beach_umbrella_leg.png", 
+                "position": [
+                    0.5, 
+                    0
+                ], 
+                "rotation": -90, 
+                "zorder": -1
+            }, 
+            "angle": 0.78539816339745, 
+            "frame": "beach_umbrella.png", 
+            "movable": false, 
+            "position": [
+                5, 
+                2, 
+                6, 
+                3
+            ], 
+            "restitution": "1", 
+            "type": "trampoline", 
+            "uid": 0
+        }, 
+        {
+            "batch": "liana_texture.png", 
+            "count": 10, 
+            "density": 0.3, 
+            "endpos": [
+                3, 
+                3
+            ], 
+            "height": 0.1, 
+            "mouseMaxForce": 250, 
+            "overlap": 0.2, 
+            "projection": [
+                2, 
+                3
+            ], 
+            "startpos": [
+                0, 
+                3
+            ], 
+            "type": "chain"
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                3.98, 
+                3.8
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "addSprite": {
+                "frame": "beach_umbrella_leg.png", 
+                "position": [
+                    0.5, 
+                    0
+                ], 
+                "rotation": -90, 
+                "zorder": -1
+            }, 
+            "angle": -0.78539816339745, 
+            "frame": "beach_umbrella.png", 
+            "movable": false, 
+            "position": [
+                7, 
+                2, 
+                8, 
+                3
+            ], 
+            "restitution": "1", 
+            "type": "trampoline", 
+            "uid": 0
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                3.97, 
+                4.51
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                3.99, 
+                3.1
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                6.02, 
+                3.8
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                6.03, 
+                3.1
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                6.01, 
+                4.51
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                7.98, 
+                3.81
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                7.99, 
+                3.11
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "body_type": "1", 
+            "frame": "beach_ball.png", 
+            "path": {
+                "action": "moveTo", 
+                "loop": true, 
+                "points": [
+                    10, 
+                    5, 
+                    10, 
+                    0, 
+                    10, 
+                    5
+                ], 
+                "speed": "0.5"
+            }, 
+            "position": [
+                7.97, 
+                4.52
+            ], 
+            "radius": 0.25, 
+            "restitution": "0.6", 
+            "type": "beachBall"
+        }, 
+        {
+            "points": [
+                [
+                    0, 
+                    3, 
+                    0.39, 
+                    3.02, 
+                    0.53, 
+                    1.72, 
+                    0.92, 
+                    0.77, 
+                    1.81, 
+                    0.95, 
+                    2.6, 
+                    3.03, 
+                    3.33, 
+                    3.05, 
+                    2.71, 
+                    1.39, 
+                    3, 
+                    0, 
+                    0, 
+                    0
+                ]
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "ground", 
+            "uid": 10
+        }, 
+        {
+            "color": [
+                186, 
+                223, 
+                205
+            ], 
+            "endPos": [
+                10, 
+                6
+            ], 
+            "opacity": "128", 
+            "sprite": "season_clouds.png", 
+            "startPos": [
+                0, 
+                6
+            ], 
+            "time": "10", 
+            "type": "infiniteSprite"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                8, 
+                3
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                8, 
+                3
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.1, 
+                0.4
+            ], 
+            "frame": "liana_pilar2.png", 
+            "position": [
+                2.76, 
+                3.01
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.9, 
+                0.4
+            ], 
+            "frame": "liana_pilar1.png", 
+            "position": [
+                0.33, 
+                2.98
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82, 
+                255
+            ], 
+            "points": [
+                0.14, 
+                3.03, 
+                0.4, 
+                3.01, 
+                0.54, 
+                1.68, 
+                0.95, 
+                0.75, 
+                1.86, 
+                0.98, 
+                2.62, 
+                3.03, 
+                3.34, 
+                3.03, 
+                2.71, 
+                1.4, 
+                3.03, 
+                0.04
+            ], 
+            "radius": "2", 
+            "type": "line"
+        }, 
+        {
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "opacity": "90", 
+            "points": [
+                3.35, 
+                3.01, 
+                2.88, 
+                3, 
+                2.36, 
+                0.66, 
+                1.13, 
+                0.01, 
+                3.01, 
+                0.01, 
+                2.72, 
+                1.43
+            ], 
+            "texture": "white_texture_16.png", 
+            "type": "texture", 
+            "zorder": "grass"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                1.59, 
+                3.51
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                1.59, 
+                3.51
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                3.92, 
+                2.33
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "palm_tree.png", 
+            "position": [
+                3.92, 
+                2.33
+            ], 
+            "rotation": 15, 
+            "scale": [
+                0.7, 
+                0.7
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0, 
+            "zorder": "backSprites"
+        }, 
+        {
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "layer": "background", 
+            "points": [
+                7.29, 
+                0, 
+                2.99, 
+                -0.02, 
+                2.72, 
+                1.38, 
+                2.79, 
+                1.66, 
+                5, 
+                1.15, 
+                5.84, 
+                0.45
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "texture"
+        }, 
+        {
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "layer": "background", 
+            "points": [
+                1.86, 
+                0.99, 
+                0.93, 
+                0.76, 
+                0.52, 
+                1.64, 
+                0.42, 
+                2.68, 
+                1.1, 
+                1.92, 
+                2.14, 
+                1.75
+            ], 
+            "texture": "ground_texture_season3.png", 
+            "type": "texture"
+        }, 
+        {
+            "anchor": [
+                0, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_2.png", 
+            "position": [
+                1.14, 
+                0.8
+            ], 
+            "scale": [
+                1.1, 
+                1.2
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "flip": [
+                true, 
+                false
+            ], 
+            "frame": "grass_sand_2.png", 
+            "position": [
+                2.73, 
+                1.61
+            ], 
+            "rotation": 110, 
+            "scale": [
+                1.1, 
+                1.2
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                243, 
+                218, 
+                82
+            ], 
+            "frame": "grass_sand_1.png", 
+            "position": [
+                2.83, 
+                0.73
+            ], 
+            "rotation": 70, 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "frontSprites"
+        }
+    ], 
+    "levelid": 19, 
+    "season": 3, 
+    "tools": {
+        "balloon": {
+            "count": 0, 
+            "disabled": "item_balloon_d.png", 
+            "meta": {
+                "anchor": "balloon.png", 
+                "batch": "balloon_rope.png"
+            }, 
+            "normal": "item_balloon_n.png", 
+            "selected": "item_balloon_s.png", 
+            "type": "tool"
+        }, 
+        "block": {
+            "count": 0, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "cardboard": {
+            "count": 0, 
+            "disabled": "item_cardboard_d.png", 
+            "meta": {
+                "frame": "cardboard_box.png"
+            }, 
+            "normal": "item_cardboard_n.png", 
+            "selected": "item_cardboard_s.png", 
+            "type": "tool"
+        }, 
+        "rope": {
+            "count": 0, 
+            "disabled": "item_rope_d.png", 
+            "meta": {
+                "anchor": "cloud.png", 
+                "batch": "rainbow.png", 
+                "endpos": [
+                    0, 
+                    0
+                ], 
+                "hook": "lollipop.png", 
+                "starpos": [
+                    0, 
+                    0
+                ], 
+                "type": "rope"
+            }, 
+            "normal": "item_rope_n.png", 
+            "selected": "item_rope_s.png", 
+            "type": "tool"
+        }, 
+        "teleport": {
+            "count": 2, 
+            "disabled": "item_teleport_d.png", 
+            "meta": {
+                "effectFrame": "teleport_ring.png", 
+                "frame": "teleport.png", 
+                "group": 1, 
+                "movable": true
+            }, 
+            "normal": "item_teleport_n.png", 
+            "selected": "item_teleport_s.png", 
+            "type": "tool"
+        }, 
+        "trampoline": {
+            "count": 1, 
+            "disabled": "item_umbrella_d.png", 
+            "meta": {
+                "addSprite": {
+                    "frame": "beach_umbrella_leg.png", 
+                    "position": [
+                        0.5, 
+                        0
+                    ], 
+                    "rotation": -90, 
+                    "zorder": -1
+                }, 
+                "frame": "beach_umbrella.png", 
+                "movable": true, 
+                "restitution": 1
+            }, 
+            "normal": "item_umbrella_n.png", 
+            "selected": "item_umbrella_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

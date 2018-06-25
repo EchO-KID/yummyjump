@@ -1,0 +1,89 @@
+Game name
+---------
+Yummy Jump
+
+Description
+-----------
+
+* EN *
+
+Welcome to the happy world of YUMMY JUMP! Help our cute hero to resolve all the puzzles 
+and rescue his friends kidnapped by a mysterious villain.
+
+YUMMY JUMP is a classic physics-based puzzle game yet with a challenging gameplay. Place the 
+tools in the screen and use them skillfully to avoid enemies, jump on platforms, bounce 
+on trampolines, slide on icy ground or even fly to catch as much cakes, tacos and 
+ice-creams as you can.
+
+* Four seasons with awesome cute arts.
+* Eighty levels and more to come.
+* Insert and use the tools accurately to resolve the puzzles.
+* Unlock all the outfits to customize your hero.
+
+Made by Voodoo Cactus.
+
+Note for Parents
+- Yummy Jump is completely free to play and does NOT contains in-app purchase.
+- This games includes advertising from partners.
+- It contents direct links to social networking websites that are intended for an audience over the age of 13.
+
+Privacy Policy:
+
+* FR *
+
+Bienvenu dans le monde adorable de YUMMY JUMP! Aidez notre petit héros à résoudre tous les 
+puzzles et ainsi sauver tous ses amis enlevés par un mystérieux vilain.
+
+YUMMY JUMP est un jeux de puzzle/action où vous devrez disposer sur l'écran les différents 
+gadgets mis à votre disposition. Il vous faudra également les utiliser avec habileté afin 
+d'éviter les ennemis, sauter sur les plateformes, rebondir sur les trampolines, glisser 
+sur la neige ou encore flotter dans les airs. Pourrez-vous résoudre tous les niveaux et obtenir
+autant de gâteaux, tacos et crèmes glacées que possible?
+
+* Quatre saisons aux graphiques "kawaii".
+* Quatre-vingt niveaux et d'autres encore à venir.
+* Placez et utilisez les gadgets judicieusement pour résoudre tous les niveaux.
+* Débloquez tous les costumes et personnalisez votre héros.
+
+Développé par Voodoo Cactus.
+
+* ES *
+
+! Bienvenido al maravilloso mundo de YUMMY JUMP! Ayuda a nuestro pequeño protagonista a 
+resolver todos los puzzles y a rescatar a sus amigos raptados por un misterioso malvado.
+
+YUMMY JUMP es un juego de puzzle / acción donde tendrás que colocar en la pantalla las 
+distintas herramientas puestas a tu disposición. También tendrás que usarlas de manera 
+hábil para evitar a los enemigos, saltar en plataformas, rebotar encima de trampolines, 
+resbalar sobre la nieve o incluso flotar en el aire. ? Podrás resolver todos los niveles 
+y obtener tantos pasteles, tacos y helados como sea posible?
+
+* Cuatro mundos con gráficos "kawaii".
+* Ochenta niveles y muchos más en camino.
+* Coloca y utiliza las herramientas con cabeza para resolver todos los niveles.
+* Desbloquea todos los trajes y personaliza al protagonista.
+
+Creado por Voodoo Cactus.
+
+Known bugs
+--------------
+It possible to win and lose and the same time if the player collide both target and ennemies.
+App crashes when game is paused twice on android (To be tested)
+App freezes for 1 second just after the first scene did enter or on the first coin touched
+App crash after memory warning - Fixed (getQuad in dancing action was leaking)
+Block tool fails erratically. In createTextureGroundCallbac, getChildByTag doesnt return a texture instance every time
+Fix hud tool menu order
+
+todo
+--------------
+Add forward button to allow the user to speed up the gameplay so it has not to wait
+Action should stop when physics is paused - FIXED
+Use director delta time instead of actual time in TouchGrabber
+Ground block shadown gradient 
+Schedule a texture scrolling every 2 or 3 seconds for all the ground block
+Add something to show current page in the scrolling menu
+Create a 'sleeping' character for the loading scene
+Add a "comic splash" sprite when player touch a dead trap
+Optimize dancing tween action. Reuse the same actions instead of creating new ones
+Add an iris wipe tranlation when entering a level from the main menu
+Confetti particle in the mainmenu (or/and level completed)

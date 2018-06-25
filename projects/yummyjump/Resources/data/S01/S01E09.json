@@ -1,0 +1,479 @@
+{
+    "assets": {
+        "batch": [
+            "rainbow.png", 
+            "balloon_rope.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:51", 
+    "graph": [
+        {
+            "defaultColor": [
+                255, 
+                133, 
+                135, 
+                255
+            ], 
+            "sprite": "season1_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                -1, 
+                4
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "aabb": [
+                0, 
+                3.5, 
+                10, 
+                7
+            ], 
+            "layer": "background", 
+            "repeatV": false, 
+            "texture": "stars_texture.png", 
+            "translation": [
+                0.01, 
+                0.01
+            ], 
+            "type": "scrollingTexture", 
+            "zorder": "backgroundTexture"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                1, 
+                4
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "color": [
+                180, 
+                180, 
+                180
+            ], 
+            "layer": "background", 
+            "points": [
+                2.65, 
+                3.31, 
+                1.66, 
+                0.99, 
+                2.66, 
+                0.99
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "texture"
+        }, 
+        {
+            "color": [
+                100, 
+                100, 
+                100
+            ], 
+            "layer": "background", 
+            "points": [
+                -0.34, 
+                0.99, 
+                1.66, 
+                0.99, 
+                2.65, 
+                3.31, 
+                -0.35, 
+                3.31
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "texture"
+        }, 
+        {
+            "color": [
+                255, 
+                255, 
+                255
+            ], 
+            "layer": "background", 
+            "opacity": "64", 
+            "points": [
+                4.25, 
+                7, 
+                5, 
+                7, 
+                7, 
+                1, 
+                4, 
+                0, 
+                3, 
+                0, 
+                1.59, 
+                0.85
+            ], 
+            "texture": "white_texture_128.png", 
+            "type": "texture", 
+            "zorder": "backSprites"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                -1, 
+                1
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                1, 
+                1
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                4, 
+                1
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                6, 
+                1
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_3.png", 
+            "position": [
+                9, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_3.png", 
+            "position": [
+                9, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_2.png", 
+            "position": [
+                5, 
+                1
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_2.png", 
+            "position": [
+                5, 
+                1
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "frame": "mount_1.png", 
+            "position": [
+                1, 
+                1
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "frame": "mount_1.png", 
+            "position": [
+                1, 
+                1
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "color": [
+                255, 
+                255, 
+                255
+            ], 
+            "layer": "background", 
+            "opacity": "100", 
+            "points": [
+                5, 
+                7, 
+                5.12, 
+                7, 
+                7.41, 
+                1.01, 
+                7, 
+                1
+            ], 
+            "texture": "white_texture_128.png", 
+            "type": "texture", 
+            "zorder": "backSprites"
+        }, 
+        {
+            "frame": "idle.png", 
+            "position": [
+                0, 
+                4
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "frame": "cake.png", 
+            "position": [
+                6, 
+                1
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "color": [
+                150, 
+                150, 
+                150
+            ], 
+            "frame": "cupcake.png", 
+            "position": [
+                0, 
+                2
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "cupcake.png", 
+            "position": [
+                6, 
+                4
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "cupcake.png", 
+            "position": [
+                5, 
+                3
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "anchor": "cloud.png", 
+            "batch": "rainbow.png", 
+            "endpos": [
+                3, 
+                1
+            ], 
+            "hook": "lollipop.png", 
+            "startpos": [
+                3, 
+                3
+            ], 
+            "type": "rope", 
+            "uid": 10
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    6.47, 
+                    1.53
+                ], 
+                "duration": "5", 
+                "loop": true
+            }, 
+            "position": [
+                5.5, 
+                0.5
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "darkness": "0.5", 
+            "position": [
+                1, 
+                2.125
+            ], 
+            "size": [
+                2, 
+                2.25
+            ], 
+            "speed": 0.2, 
+            "type": "shadow"
+        }, 
+        {
+            "points": [
+                [
+                    0, 
+                    3.25, 
+                    3, 
+                    4
+                ], 
+                [
+                    0, 
+                    0, 
+                    3, 
+                    1
+                ], 
+                [
+                    4, 
+                    0, 
+                    8, 
+                    1
+                ]
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "ground", 
+            "uid": 10
+        }
+    ], 
+    "levelid": 9, 
+    "season": 1, 
+    "tools": {
+        "block": {
+            "count": 0, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "rope": {
+            "count": 1, 
+            "disabled": "item_rope_d.png", 
+            "meta": {
+                "anchor": "cloud.png", 
+                "batch": "rainbow.png", 
+                "endpos": [
+                    0, 
+                    0
+                ], 
+                "hook": "lollipop.png", 
+                "starpos": [
+                    0, 
+                    0
+                ], 
+                "type": "rope"
+            }, 
+            "normal": "item_rope_n.png", 
+            "selected": "item_rope_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

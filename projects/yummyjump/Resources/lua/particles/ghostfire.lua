@@ -1,0 +1,43 @@
+return {
+    emitterType = kCCParticleModeGravity, -- kCCParticleModeGravity, kCCParticleModeRadius
+    angle = 0.0,
+    angleVariance = 360.0,
+    duration = -1.0, -- kCCParticleDurationInfinity 
+    maxParticules = 20,
+    blendFuncSource = GL_SRC_ALPHA,
+    blendFuncDestination = GL_ONE_MINUS_SRC_ALPHA,
+    blendAdditive = false,
+    startColor = {0.43,0.08,0.69,0.66},
+    startColorVariance = {0,0,0,1},
+    finishColor = {0,0,0,0},
+    finishColorVariance = {0,0,0,0},
+    startSize = 42.0,
+    startSizeVariance = 0.0,
+    finishSize = 40.0,
+    finishSizeVariance = 0.0,
+    lifespan = 0.3,
+    lifespanVariance = 0.0,
+    rotationStart = 0,
+    rotationStartVariance = 0,
+    rotationEnd = 0,
+    rotationEndVariance = 0,
+    sourcePosition = {0,0},
+    sourcePositionVariance = {0,0},
+    textureFileName = '',
+    textureImageData = '',
+    -- Mode Radius
+    maxRadius = 1.0,
+    maxRadiusVariance = 1.0,
+    minRadius = 1.0,
+    rotatePerSecond = 0.0,
+    rotatePerSecondVariance = 0.0,
+    -- Mode gravity 
+    gravity = {0,0},
+    speed = 0.0,
+    speedVariance = 60.0,
+    radialAcceleration = 0.0,
+    radialAccelVariance = 0.0,
+    tangentialAcceleration = 100.0,
+    tangentialAccelVariance = 40.0,
+    -- rotationIsDir = false , -- not supported in Lua
+}

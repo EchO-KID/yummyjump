@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{fc5cb953-2953-4968-83b3-39e3ff951754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{037a9a02-b906-4cc5-ad98-304acd4e25ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{2d1d0979-58cd-4ab6-b91c-13650158f1fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\bindings">
+      <UniqueIdentifier>{6297994e-3473-46d0-b783-0b3675783f0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\body">
+      <UniqueIdentifier>{2058aa63-ce41-4f9c-a80e-b1db9fff3aaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\body\base">
+      <UniqueIdentifier>{7a908fcb-09d7-41b2-a3cd-549fa6f12a61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\body\tests">
+      <UniqueIdentifier>{dccc6058-a7b3-4e58-ac28-7e432dfad524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\body\vrope">
+      <UniqueIdentifier>{041fcc6b-22ca-4535-b79a-cb2c2d769c5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ccb">
+      <UniqueIdentifier>{c59642c1-e0f8-4db1-bc0f-60df27a08ac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\common">
+      <UniqueIdentifier>{7b0d14f8-478d-49c4-b51b-4b1e5b44dfdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\console">
+      <UniqueIdentifier>{416e79ab-22ab-441b-9664-e5620c5a2a5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\console\tolua">
+      <UniqueIdentifier>{13791948-074d-4cab-bc46-8c7cca5705e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\debug">
+      <UniqueIdentifier>{60a41932-97be-4d5f-bd83-7c85943f5097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\io">
+      <UniqueIdentifier>{98cf4abf-6465-4f85-b27d-aaaf9dfd57da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\layer">
+      <UniqueIdentifier>{410f7452-88ac-4d17-a284-94ce0477a204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\nodes">
+      <UniqueIdentifier>{021cfa94-0495-4c8f-8d2e-d2a2ebd2660b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\physics">
+      <UniqueIdentifier>{001467ff-65b0-4d31-8ff3-5ca7b4142592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\platform">
+      <UniqueIdentifier>{95403c72-e181-4964-b7a6-fa6aa23a8172}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\sprites">
+      <UniqueIdentifier>{cd137e5e-7526-4c31-af87-d1be0e3efb33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs">
+      <UniqueIdentifier>{85345fea-41b3-43b5-b34b-0c060abfc0e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\LuaBridge">
+      <UniqueIdentifier>{d4a40168-f51f-4a78-b655-6dd6d701163b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\poly2tri">
+      <UniqueIdentifier>{c765ea15-7bdc-4e30-9b6e-97e7ddfa5a8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\poly2tri\common">
+      <UniqueIdentifier>{7745e437-ef51-4d1c-b467-d60f8e2933c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\poly2tri\sweep">
+      <UniqueIdentifier>{d4e5fbac-01e4-47fd-adfb-ff4b308891b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\clipper">
+      <UniqueIdentifier>{3ba2e7aa-1762-41e2-a692-4162a734c044}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\micropather">
+      <UniqueIdentifier>{f1b7e639-4453-4a75-8b1b-21e22156f411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\base64">
+      <UniqueIdentifier>{6a94f05c-78c7-40e5-b060-a5e3964d0c32}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\bindings\custom_bindings.hpp">
+      <Filter>Classes\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\bindings\luabridgehelper.h">
+      <Filter>Classes\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\bindings\luahelper.h">
+      <Filter>Classes\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\base\box.h">
+      <Filter>Classes\body\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\base\chain.h">
+      <Filter>Classes\body\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\base\circle.h">
+      <Filter>Classes\body\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\base\physicnode.h">
+      <Filter>Classes\body\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\base\texture.h">
+      <Filter>Classes\body\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\tests\test_rope.h">
+      <Filter>Classes\body\tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\tests\tests_physics.h">
+      <Filter>Classes\body\tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\tests\tests_touch.h">
+      <Filter>Classes\body\tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\vrope\vpoint.h">
+      <Filter>Classes\body\vrope</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\vrope\vrope.h">
+      <Filter>Classes\body\vrope</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\vrope\vstick.h">
+      <Filter>Classes\body\vrope</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\boundary.h">
+      <Filter>Classes\body</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\body\rope.h">
+      <Filter>Classes\body</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ccb\cocosbuilderlua.h">
+      <Filter>Classes\ccb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\assets.h">
+      <Filter>Classes\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\notifications.h">
+      <Filter>Classes\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\settings.h">
+      <Filter>Classes\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\version.h">
+      <Filter>Classes\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\visiblerect.h">
+      <Filter>Classes\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\io\touchgrabber.h">
+      <Filter>Classes\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\layer\physicslayer.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\layer\toolbox.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nodes\actiontweenlua.h">
+      <Filter>Classes\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nodes\custommenuitem.h">
+      <Filter>Classes\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nodes\drawnode.h">
+      <Filter>Classes\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nodes\nodeutil.h">
+      <Filter>Classes\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nodes\opacitynode.h">
+      <Filter>Classes\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nodes\particlequad.h">
+      <Filter>Classes\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nodes\postprocessing.h">
+      <Filter>Classes\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\physics\action.h">
+      <Filter>Classes\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\physics\contact.h">
+      <Filter>Classes\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\physics\graph.h">
+      <Filter>Classes\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\physics\path.h">
+      <Filter>Classes\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\physics\physics.h">
+      <Filter>Classes\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\physics\touch.h">
+      <Filter>Classes\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\physics\userdata.h">
+      <Filter>Classes\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\platform\pix2d_platform.h">
+      <Filter>Classes\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sprites\iriswipe.h">
+      <Filter>Classes\sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sprites\texturesprite.h">
+      <Filter>Classes\sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\forwards.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\geom.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\global.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\LuaBridge\LuaBridge.h">
+      <Filter>libs\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\LuaBridge\RefCountedObject.h">
+      <Filter>libs\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\LuaBridge\RefCountedPtr.h">
+      <Filter>libs\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\poly2tri\poly2tri.h">
+      <Filter>libs\poly2tri</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\poly2tri\common\shapes.h">
+      <Filter>libs\poly2tri\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\poly2tri\common\utils.h">
+      <Filter>libs\poly2tri\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\poly2tri\sweep\advancing_front.h">
+      <Filter>libs\poly2tri\sweep</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\poly2tri\sweep\cdt.h">
+      <Filter>libs\poly2tri\sweep</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\poly2tri\sweep\sweep.h">
+      <Filter>libs\poly2tri\sweep</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\poly2tri\sweep\sweep_context.h">
+      <Filter>libs\poly2tri\sweep</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\platform\win32\native.h">
+      <Filter>Classes\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\clipper\clipper.hpp">
+      <Filter>libs\clipper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\micropather\micropather.h">
+      <Filter>libs\micropather</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\b64\cdecode.h">
+      <Filter>libs\base64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\b64\cencode.h">
+      <Filter>libs\base64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\b64\decode.h">
+      <Filter>libs\base64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\b64\encode.h">
+      <Filter>libs\base64</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\bindings\custom_bindings.cpp">
+      <Filter>Classes\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\bindings\luabridgehelper.cpp">
+      <Filter>Classes\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\bindings\luahelper.cpp">
+      <Filter>Classes\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\base\box.cpp">
+      <Filter>Classes\body\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\base\chain.cpp">
+      <Filter>Classes\body\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\base\circle.cpp">
+      <Filter>Classes\body\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\base\physicnode.cpp">
+      <Filter>Classes\body\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\base\texture.cpp">
+      <Filter>Classes\body\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\tests\test_rope.cpp">
+      <Filter>Classes\body\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\tests\tests_physics.cpp">
+      <Filter>Classes\body\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\tests\tests_touch.cpp">
+      <Filter>Classes\body\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\vrope\vrope.cpp">
+      <Filter>Classes\body\vrope</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\vrope\vstick.cpp">
+      <Filter>Classes\body\vrope</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\vrope\vpoint.cpp">
+      <Filter>Classes\body\vrope</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\boundary.cpp">
+      <Filter>Classes\body</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\body\rope.cpp">
+      <Filter>Classes\body</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ccb\cocosbuilderlua.cpp">
+      <Filter>Classes\ccb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\notifications.cpp">
+      <Filter>Classes\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\settings.cpp">
+      <Filter>Classes\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\visiblerect.cpp">
+      <Filter>Classes\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\assets.cpp">
+      <Filter>Classes\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\io\touchgrabber.cpp">
+      <Filter>Classes\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\layer\physicslayer.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\layer\toolbox.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nodes\actiontweenlua.cpp">
+      <Filter>Classes\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nodes\custommenuitem.cpp">
+      <Filter>Classes\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nodes\drawnode.cpp">
+      <Filter>Classes\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nodes\nodeutil.cpp">
+      <Filter>Classes\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nodes\opacitynode.cpp">
+      <Filter>Classes\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nodes\particlequad.cpp">
+      <Filter>Classes\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nodes\postprocessing.cpp">
+      <Filter>Classes\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics\contact.cpp">
+      <Filter>Classes\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics\graph.cpp">
+      <Filter>Classes\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics\path.cpp">
+      <Filter>Classes\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics\physics.cpp">
+      <Filter>Classes\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics\touch.cpp">
+      <Filter>Classes\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics\userdata.cpp">
+      <Filter>Classes\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics\action.cpp">
+      <Filter>Classes\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sprites\iriswipe.cpp">
+      <Filter>Classes\sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sprites\texturesprite.cpp">
+      <Filter>Classes\sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\geom.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\poly2tri\common\shapes.cc">
+      <Filter>libs\poly2tri\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\poly2tri\sweep\advancing_front.cc">
+      <Filter>libs\poly2tri\sweep</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\poly2tri\sweep\cdt.cc">
+      <Filter>libs\poly2tri\sweep</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\poly2tri\sweep\sweep.cc">
+      <Filter>libs\poly2tri\sweep</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\poly2tri\sweep\sweep_context.cc">
+      <Filter>libs\poly2tri\sweep</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\platform\win32\native.cpp">
+      <Filter>Classes\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\clipper\clipper.cpp">
+      <Filter>libs\clipper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\micropather\micropather.cpp">
+      <Filter>libs\micropather</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\b64\cdecode.c">
+      <Filter>libs\base64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\b64\cencode.c">
+      <Filter>libs\base64</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

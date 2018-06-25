@@ -1,0 +1,53 @@
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+*.trace
+tools/crypto
+Resources/lua/_tmp_level.json
+tools/logs
+.DS_Store
+*.swp
+.*.swp
+.*.swo
+proj.ios/build
+proj.ios/gameplay.xcodeproj/xcuserdata
+proj.android/local.properties
+proj.android/obj
+proj.android/gen
+proj.android/libs/armeabi
+proj.android/assets
+proj.android/bin
+proj.mac/build
+tools/client/lib/nohup.out
+tools/debug
+tools/screenshots
+tools/capture/output/*
+Assets/submited/*
+Assets/svg/*.svg
+Assets/svg/*
+Assets/svg/sprites
+docs/*.ods
+docs/*.ods#
+docs/*.odt
+docs/images
+Resources/sd/*.png
+Resources/sd/*.plist
+Resources/hd/*.png
+Resources/hd/*.plist
+Resources/retina/*.png
+Resources/retina/*.plist
+Resources/fileLookup.plist
+Assets/fonts
+Resources/sounds/background.mp3
+Resources/sounds/fx/*
+Resources/lua/refreshAssets.lua
+Resources/lua/refreshAssets_auto.lua
+Assets/sounds/
+tools/synfig/
+Assets/trailer/
+docs/Promo*
+tools/2gif/frames
+tools/2gif/output

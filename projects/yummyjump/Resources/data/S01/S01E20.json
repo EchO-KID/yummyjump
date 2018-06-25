@@ -1,0 +1,542 @@
+{
+    "assets": {
+        "batch": [
+            "rainbow.png", 
+            "balloon_rope.png"
+        ], 
+        "particleBatch": [
+            "star_particle_2.png"
+        ], 
+        "spritesheets": [
+            "actions01.plist", 
+            "actions02.plist"
+        ]
+    }, 
+    "date": "2014-11-20 09:52:52", 
+    "graph": [
+        {
+            "defaultColor": [
+                255, 
+                133, 
+                135, 
+                255
+            ], 
+            "sprite": "season1_background.png", 
+            "type": "background"
+        }, 
+        {
+            "position": [
+                0, 
+                -2
+            ], 
+            "size": [
+                10, 
+                9
+            ], 
+            "type": "boundary"
+        }, 
+        {
+            "aabb": [
+                0, 
+                3.5, 
+                10, 
+                7
+            ], 
+            "layer": "background", 
+            "repeatV": false, 
+            "texture": "stars_texture.png", 
+            "translation": [
+                0.01, 
+                0.01
+            ], 
+            "type": "scrollingTexture", 
+            "zorder": "backgroundTexture"
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_3.png", 
+            "position": [
+                8, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_3.png", 
+            "position": [
+                8, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_2.png", 
+            "position": [
+                2, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_2.png", 
+            "position": [
+                2, 
+                0
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_1.png", 
+            "position": [
+                1.25, 
+                5
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0.5, 
+                0
+            ], 
+            "frame": "mount_1.png", 
+            "position": [
+                1.25, 
+                5
+            ], 
+            "type": "dancingSprite", 
+            "uid": 0
+        }, 
+        {
+            "anchor": [
+                0, 
+                1
+            ], 
+            "frame": "grass_2.png", 
+            "position": [
+                0, 
+                5
+            ], 
+            "type": "sprite", 
+            "uid": 0, 
+            "zorder": "grass"
+        }, 
+        {
+            "color": [
+                180, 
+                180, 
+                180
+            ], 
+            "layer": "background", 
+            "points": [
+                1.76, 
+                4.41, 
+                1.76, 
+                -0.14, 
+                0.76, 
+                -0.14
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "texture"
+        }, 
+        {
+            "color": [
+                100, 
+                100, 
+                100
+            ], 
+            "layer": "background", 
+            "points": [
+                -0.24, 
+                4.41, 
+                1.76, 
+                4.41, 
+                0.76, 
+                -0.14, 
+                -0.24, 
+                -0.14
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "texture"
+        }, 
+        {
+            "frame": "idle.png", 
+            "position": [
+                0, 
+                5
+            ], 
+            "type": "player", 
+            "uid": 1
+        }, 
+        {
+            "frame": "cake.png", 
+            "position": [
+                7, 
+                5
+            ], 
+            "type": "target", 
+            "uid": 5
+        }, 
+        {
+            "frame": "cupcake.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                5.5, 
+                3.5
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "endpos": [
+                5, 
+                4.5
+            ], 
+            "position": [
+                5, 
+                3
+            ], 
+            "size": [
+                2, 
+                1
+            ], 
+            "startpos": [
+                5, 
+                1.5
+            ], 
+            "type": "slider", 
+            "uid": 10
+        }, 
+        {
+            "frame": "cupcake.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                6.5, 
+                4.5
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "cupcake.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                6, 
+                4
+            ], 
+            "type": "coin"
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                2.5, 
+                0.5
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                3.5, 
+                1.5
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                3, 
+                1
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "endpos": [
+                7, 
+                4.5
+            ], 
+            "position": [
+                7, 
+                3
+            ], 
+            "size": [
+                2, 
+                1
+            ], 
+            "startpos": [
+                7, 
+                1.5
+            ], 
+            "type": "slider", 
+            "uid": 10
+        }, 
+        {
+            "endpos": [
+                3, 
+                4.5
+            ], 
+            "position": [
+                3, 
+                3
+            ], 
+            "size": [
+                2, 
+                1
+            ], 
+            "startpos": [
+                3, 
+                1.5
+            ], 
+            "type": "slider", 
+            "uid": 10
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                5.5, 
+                1.5
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                6.5, 
+                0.5
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                6, 
+                1
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                3.5, 
+                3.5
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                3, 
+                4
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "frame": "bad1.png", 
+            "path": {
+                "action": "circleTo", 
+                "center": [
+                    5, 
+                    3
+                ], 
+                "duration": "10", 
+                "loop": true
+            }, 
+            "position": [
+                2.5, 
+                4.5
+            ], 
+            "type": "bad"
+        }, 
+        {
+            "darkness": "0.5", 
+            "position": [
+                0.895, 
+                2.03
+            ], 
+            "size": [
+                1.83, 
+                4.52
+            ], 
+            "speed": 0.3, 
+            "type": "shadow"
+        }, 
+        {
+            "points": [
+                [
+                    0, 
+                    4.25, 
+                    2, 
+                    5
+                ]
+            ], 
+            "texture": "ground_texture.png", 
+            "type": "ground", 
+            "uid": 10
+        }
+    ], 
+    "levelid": 20, 
+    "season": 1, 
+    "tools": {
+        "block": {
+            "count": 0, 
+            "disabled": "item_block_d.png", 
+            "normal": "item_block_n.png", 
+            "selected": "item_block_s.png", 
+            "type": "tool"
+        }, 
+        "rope": {
+            "count": 0, 
+            "disabled": "item_rope_d.png", 
+            "meta": {
+                "anchor": "cloud.png", 
+                "batch": "rainbow.png", 
+                "endpos": [
+                    0, 
+                    0
+                ], 
+                "hook": "lollipop.png", 
+                "starpos": [
+                    0, 
+                    0
+                ], 
+                "type": "rope"
+            }, 
+            "normal": "item_rope_n.png", 
+            "selected": "item_rope_s.png", 
+            "type": "tool"
+        }
+    }, 
+    "version": "autogenerated v0.1", 
+    "world": {
+        "gravity": [
+            0, 
+            -10
+        ], 
+        "position": [
+            0, 
+            0
+        ], 
+        "size": [
+            10, 
+            7
+        ], 
+        "unit": 0.5
+    }
+}

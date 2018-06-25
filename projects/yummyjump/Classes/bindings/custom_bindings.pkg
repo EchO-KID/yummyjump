@@ -1,0 +1,823 @@
+/**
+ * Copyright (C) 2012-2014 Laurent Zubiaur
+ *
+ * All Rights Reserved.
+ *
+ * NOTICE: The license and distribution terms for this file may be
+ * found in the file LICENSE in this distribution or at
+ * http::/www.pix2d.com/license/LICENSE.
+ *
+ * @file:   custom_bindings.pkg
+ * @author: Laurent Zubiaur
+ *
+ */
+
+$#include "geom.h"
+$#include "AppDelegate.h"
+$#include "platform/pix2d_platform.h"
+$#include "body/base/physicnode.h"
+$#include "body/base/box.h"
+$#include "body/base/chain.h"
+$#include "body/base/circle.h"
+$#include "body/base/texture.h"
+$#include "body/rope.h"
+$#include "body/boundary.h"
+$#include "box2d/box2d.h"
+$#include "ccb/cocosbuilderlua.h"
+$#include "common/visiblerect.h"
+$#include "common/assets.h"
+$#include "io/touchgrabber.h"
+$#include "layer/physicslayer.h"
+$#include "nodes/custommenuitem.h"
+$#include "nodes/actiontweenlua.h"
+$#include "nodes/nodeutil.h"
+$#include "nodes/opacitynode.h"
+$#include "nodes/particlequad.h"
+$#include "nodes/postprocessing.h"
+$#include "nodes/drawnode.h"
+$#include "physics/physics.h"
+$#include "physics/action.h"
+$#include "physics/graph.h"
+$#include "physics/contact.h"
+$#include "physics/touch.h"
+$#include "sprites/texturesprite.h"
+$#include "sprites/iriswipe.h"
+
+///////////////////////// Cocos2d-x /////////////////////////
+// Cocos2dx classes that are not exposed to Lua by default //
+
+class CCClippingNode : public CCNode
+{
+    static CCClippingNode* create();
+    static CCClippingNode* create(CCNode *pStencil);
+    CCNode* getStencil() const;
+    void setStencil(CCNode *pStencil);
+    GLfloat getAlphaThreshold() const;
+    void setAlphaThreshold(GLfloat fAlphaThreshold);
+    bool isInverted() const;
+    void setInverted(bool bInverted);
+}
+
+class CCActionTween : public CCActionInterval
+{
+    static CCActionTween* create(float aDuration, const char* key, float from, float to);
+};
+
+/// We use a custom `pix2d::DrawNode` instead of cocos2d::CCDrawNode because
+/// drawPolygon requires an array of CCPoint which is not natively supported in tolua.
+/// Solved in cocos2dx 3.0.
+/// Nevertheless we still have to define CCDrawNode here because pix2d::DrawNode inherits from it
+class CCDrawNode : public CCNode
+{
+    static CCDrawNode* create();
+    void drawDot(const CCPoint &pos, float radius, const ccColor4F &color);
+    void drawSegment(const CCPoint &from, const CCPoint &to, float radius, const ccColor4F &color);
+    void drawQuadraticBezier(const CCPoint& from, const CCPoint& control, const CCPoint& to, unsigned int segments, const ccColor4F &color);
+    /// void drawPolygon(CCPoint *verts, unsigned int count, const ccColor4F &fillColor, float borderWidth, const ccColor4F &borderColor);
+    void clear();
+    ccBlendFunc getBlendFunc() const;
+    void setBlendFunc(const ccBlendFunc &blendFunc);
+};
+
+///////////////////////// Box2D ///////////////////////
+
+struct b2Vec2
+{
+    b2Vec2() {}
+    b2Vec2(float x, float y);
+    void SetZero();
+    void Set(float x, float y);
+    float x, y;
+};
+
+enum b2BodyType
+{
+    b2_staticBody = 0,
+    b2_kinematicBody,
+    b2_dynamicBody
+};
+
+class b2Joint {
+}
+
+struct b2DistanceJoint : public b2Joint
+{
+    b2Vec2 GetReactionForce(float inv_dt);
+    float GetReactionTorque(float inv_dt);
+}
+
+/// Must provide b2WeldJoint definition to tolua if we want to be able to
+/// call Physics::removeJoint(b2Joint*) with b2WeldJoint
+struct b2WeldJoint : public b2Joint
+{}
+
+class b2RevoluteJoint : public b2Joint
+{
+    b2Vec2 GetAnchorA() const;
+    b2Vec2 GetAnchorB() const;
+    const b2Vec2& GetLocalAnchorA() const;
+    const b2Vec2& GetLocalAnchorB() const;
+    float32 GetReferenceAngle() const;
+    float32 GetJointAngle() const;
+    float32 GetJointSpeed() const;
+    bool IsLimitEnabled() const;
+    void EnableLimit(bool flag);
+    float32 GetLowerLimit() const;
+    float32 GetUpperLimit() const;
+    void SetLimits(float lower, float upper);
+    bool IsMotorEnabled() const;
+    void EnableMotor(bool flag);
+    void SetMotorSpeed(float speed);
+    float32 GetMotorSpeed() const;
+    void SetMaxMotorTorque(float torque);
+    float32 GetMaxMotorTorque() const;
+    b2Vec2 GetReactionForce(float inv_dt) const;
+    float32 GetReactionTorque(float inv_dt) const;
+    float32 GetMotorTorque(float inv_dt) const;
+}
+
+struct b2RayCastInput
+{
+    b2Vec2 p1, p2;
+    float maxFraction;
+    b2RayCastInput();
+};
+
+struct b2RayCastOutput
+{
+    b2Vec2 normal;
+    float fraction;
+    b2RayCastOutput();
+};
+///////////////////////// std::vector ///////////////////////
+/*
+because "using namespace std" is included somewhere, vector (and strings) must be defined without namespace in the tolua package (namespace can be used in the original class).
+TODO: wrap the vector class in the std namespace (see command.pkg). Lua call to vector should be updated.
+int foo(std::vector<float>) // not correct
+int foo(vector<float>) // correct
+
+Create a vector of b2Vec2 objects in lua:
+local vec = vector_b2Vec2_:new_local()
+
+Create strings vector:
+local vec = vector_string_:new_local()
+*/
+class vector {
+    TOLUA_TEMPLATE_BIND(T, string, CCPoint, b2Vec2, pix2d::BezierCurve)
+
+    void clear();
+    int size() const;
+
+    const T& operator[](int index) const;
+    T& operator[](int index);
+    void push_back(T val);
+
+    vector();
+    ~vector();
+};
+
+/////////////////////// AppDelegate /////////////////////////
+
+class  AppDelegate : private cocos2d::CCApplication {
+    void registerScriptHandler(LUA_FUNCTION lo);
+}
+
+/////////////////////// PIX2D namespace /////////////////////////
+
+namespace pix2d {
+
+    class Native {
+        static Native* getInstance();
+        void openURL(const char* pszUrl);
+        bool hideAd();
+        bool showAd();
+        void exitApp();
+        void registerAdMobScriptHandler(LUA_FUNCTION lo);
+        void unregisterAdMobScriptHandler();
+    };
+
+    class BezierCurve {
+        CCPoint pointAt(double t) const;
+        const CCPoint &point(unsigned int i) const;
+        unsigned order() const;
+        CCPoint initialPoint() const;
+        CCPoint finalPoint() const;
+    };
+
+    class LineBezier  : public BezierCurve {
+        LineBezier(CCPoint c0, CCPoint c1);
+    };
+
+    class QuadBezier  : public BezierCurve {
+        QuadBezier(CCPoint c0, CCPoint c1, CCPoint c2);
+    };
+
+    class CubicBezier : public BezierCurve {
+        CubicBezier(CCPoint c0, CCPoint c1, CCPoint c2, CCPoint c3);
+    };
+
+    class BezierPath : public vector<BezierCurve> {
+        BezierPath();
+        void close(bool value = true);
+        bool closed() const;
+        bool empty() const;
+        CCPoint initialPoint() const;
+        CCPoint finalPoint() const;
+        CCPoint pointAt(double t) const;
+    };
+
+    class CocosBuilderLua : public CCObject {
+        /// WARNING function are mandatory. So both function must be provided
+        static CCNode *create(const char *filename, LUA_FUNCTION assignMemberHandler, LUA_FUNCTION animationHandler);
+        static void registerLoaders();
+    };
+
+    class NodeUtil {
+        static void pauseSchedulerAndActions(CCNode *node);
+        static void resumeSchedulerAndActions(CCNode *node);
+    };
+
+    class DrawNode : public CCDrawNode {
+        static DrawNode *create();
+        void drawPolygon(vector<CCPoint> &points, const ccColor4F &fillColor, float borderWidth, const ccColor4F &borderColor);
+        void drawCircle(const CCPoint &center, float radius, float precision, float borderWidth, const ccColor4F &fillColor, const ccColor4F &pathColor);
+    };
+
+    class PostProcessing : CCNode {
+        virtual CCRenderTexture *capture();
+        CCRenderTexture *getFrameBuffer();
+        void refresh(bool clean);
+        void clear(const ccColor4F &color);
+    };
+
+    class DoublePostProcessing : public PostProcessing {
+        virtual CCRenderTexture *getFrameBuffer();
+        void refresh(bool clean);
+    };
+
+    ////////////////////// PIXELATION /////////////////////////
+    class Pixelation : public PostProcessing {
+        static Pixelation *create(CCNode *node, const CCSize &size, float width, float height);
+    };
+
+    ////////////////////// GRAYSCALE /////////////////////////
+    class Grayscale : public PostProcessing {
+        static Grayscale *create(CCNode *node, const CCSize &size);
+    };
+
+    ////////////////////// FAST BLUR //////////////////////
+    class FastBlur : public DoublePostProcessing {
+        static FastBlur *create(CCNode *node, const CCSize &size, float radius);
+    };
+
+    ////////////////////// GAUSSIAN BLUR //////////////////////
+    class GaussianBlur : public DoublePostProcessing {
+        static GaussianBlur *create(CCNode *node, const CCSize &size, float radius);
+    };
+
+    ////////////////////// Graph /////////////////////////
+    class Graph {
+        enum NodeType {
+            kUnknown @unknown           = 0,
+            kEmpty @empty               = (int)'.',
+            kSolidGround @solidGround   = (int)'#',
+        };
+
+        enum ResultCode {
+            kSolved @solved,
+            kNoSolution @noSolution,
+            kStartEndSame @startEndSame,
+        };
+
+        Graph(unsigned int width, unsigned int height);
+        void update(unsigned int i, unsigned int j, const NodeType type);
+        int solve(const b2Vec2 &s, const b2Vec2 &d, vector<b2Vec2> &outputPath);
+        void getSize(float *width=0,float *height=0) const;
+        void dump();
+    };
+
+    ////////////////////// Assets /////////////////////////
+
+    class Assets {
+        enum FontTag {
+            kRoboto @ Robot= 0,
+            kChewy @ Chewy,
+            /// kAnnieUseYourTelescope @AnnieUseYourTelescope,
+            /// kTrashHand @ TrashHand
+        };
+
+        enum FontSizeTag {
+            kFontSizeTiny @Tiny= 0,
+            kFontSizeSmall @Small,
+            kFontSizeMedium @Medium,
+            kFontSizeLarge @Large,
+            kFontSizeHuge @Huge
+        };
+
+        static const char *font(FontTag tag);
+        static float fontSize(FontSizeTag tag);
+        static bool writeTextFile(const string &filename, const string &text);
+        static string readTextFile(const string &filename, bool encrypted = false);
+    };
+
+    class TouchGrabber : public CCLayer {
+        bool load(const string &filename);
+        bool save(const string &filename);
+
+        void play();
+        void stop();
+        void record(bool value);
+
+        bool isRecording();
+        bool isPlaying();
+    };
+
+    class OpacityNode : public CCNodeRGBA {
+        static OpacityNode *create();
+        virtual void setOpacity(float value);
+    }
+
+    class CustomMenuItem : public CCMenuItemImage {
+        static CustomMenuItem *create(CCNode* normalSprite, CCNode* selectedSprite, CCNode* disabledSprite = NULL);
+        void registerScriptHandler(LUA_FUNCTION lo);
+    };
+
+    class CustomLabelTTF : public CCLabelTTF {
+        static CustomLabelTTF *create();
+    };
+
+    class CustomMenuItemFont : public CCMenuItemFont
+    {
+        static CustomMenuItemFont *create(const char *text,const char *fontname,unsigned int fontsize);
+    };
+
+    class CustomMenuItemToggle : public CCMenuItemToggle {
+        static CustomMenuItemToggle *create(CCMenuItem* item);
+    };
+
+    class TextureSprite : public CCNodeRGBA {
+        static TextureSprite *create(string texFileName, vector<CCPoint> &vertices);
+        static TextureSprite *createWithAABB(string texFileName, CCPoint upperBound, CCPoint lowerBound);
+        void translateTexCoord(float u, float v);
+        void setRepeat(bool horizontal, bool vertical);
+        CCSize getTextureSize() const;
+        /// TODO define get/setBlendFunc if required (tolua++ does not provide good multi-inherence support)
+        virtual void setBlendFunc(ccBlendFunc blendFunc);
+        virtual ccBlendFunc getBlendFunc(void);
+    };
+
+    ///////////////////////// ActionTweenLua //////////////////////////
+
+    class ActionTweenLua : public CCActionInterval {
+        static ActionTweenLua* create(float aDuration, const char* key, float from, float to, LUA_FUNCTION handler);
+    };
+
+    ///////////////////////// CustomSprite //////////////////////////
+    class CustomSprite : public CCSprite, public CCActionTweenDelegate {
+        /// static CustomSprite* create();
+        static CustomSprite* createWithSpriteFrameName(const char *pszSpriteFrameName);
+        /// static CustomSprite* createWithTexture(CCTexture2D *pTexture);
+        void registerTweenActionHandler(LUA_FUNCTION lo);
+        void unregisterTweenActionHandler();
+        inline void setQuad(const ccV3F_C4B_T2F_Quad quad);
+    };
+
+    ///////////////////////// PhysicNode /////////////////////////
+    struct PhysicNodeDef
+    {
+        int uid;
+        int tag;
+        int zorder;
+        b2FixtureDef fixture;   /// DEPRECATED
+        b2BodyDef body;         /// DEPRECATED
+        b2BodyType body_type;   /// the body type (b2_dynamicBody, b2_kinematicBody or b2_staticBody)
+        std::string sprite;
+        std::string frame;
+        b2Vec2 pos;             /// position in the map (not position in meters or pixels)
+        float angle;
+        bool is_sensor;
+        float restitution;
+        float density;
+        float friction;
+        unsigned short category;
+        unsigned short mask;
+        signed short group;
+    };
+
+    class PhysicNode : public CCNodeRGBA {
+
+        /// enum key are renamed for easier name in Lua
+        enum tag {
+            kBoundaryTag @boundary = 1,
+            kMaxTag @maxtag
+        };
+
+        /// b2Body *body() const;
+        CustomSprite *getSprite();
+        b2BodyType getBodyType();
+        void setBodyType(b2BodyType type);
+        void movable(bool value);
+        bool isMovable() const;
+        void setBodyPosition(float x, float y);
+        void setBodyRotation(float a);
+        b2Vec2 getWorldPoint(const b2Vec2 &localPoint) const;
+        b2Vec2 getLocalPoint(const b2Vec2 &worldPoint) const;
+        b2Vec2 getLocalVector(const b2Vec2 &worldVector) const;
+        b2Vec2 getWorldVector(const b2Vec2 &localVector) const;
+        void setSleepingAllowed(bool value);
+        void setFixedRotation(bool value);
+        const b2Vec2& getBodyPosition();
+        const b2Vec2& getBodyCenter();
+        void setGravityScale(float scale);
+        float getGravityScale();
+        float getAngle();
+        float getMass();
+        void setMass(float value);
+        void setLinearVelocity(const b2Vec2 &v);
+        void applyLinearImpulse(float x, float y);
+        void applyForceToCenter(float x, float y);
+        b2Vec2 getLinearVelocity();
+        float getIntertia();
+        void setAngularVelocity(float);
+        float getAngularVelocity();
+        void setAngularDamping(float d);
+        void setLinearDamping(float d);
+        void setCollisionFilter(unsigned short category, unsigned short mask, signed short group);
+        void setCollisionCategory(unsigned short category);
+        void setCollisionMask(unsigned short mask);
+        void setCollisionGroup(signed short group);
+        void getCollisionFilter(unsigned short *category = 0, unsigned short *mask = 0, signed short *group = 0);
+        void setBullet(bool value);
+        bool isBullet();
+        bool rayCast(b2RayCastOutput* output, const b2RayCastInput& input, int childIndex = 0);
+    };
+
+    ///////////////////////// Box /////////////////////////
+
+    struct BoxDef : public PhysicNodeDef
+    {
+        b2Vec2 size;
+        b2Vec2 center;
+        /// Constructor
+        BoxDef();
+    };
+
+    class Box : public PhysicNode {
+        static Box *create(const BoxDef &def);
+    };
+
+    ///////////////////////// Circle ///////////////////////// 
+
+    struct CircleDef : public PhysicNodeDef
+    {
+        float radius;
+        b2CircleShape shape;
+        /// Constructor
+        CircleDef();
+    };
+
+    class Circle : public PhysicNode {
+        static Circle *create(const CircleDef &def);
+    };
+
+    //////////////////////// Chain ////////////////////////
+
+    struct ChainDef : public PhysicNodeDef {
+        vector<b2Vec2> vertices;
+        ChainDef();
+    };
+
+    /** @brief A physic node with a simple Box shape */
+    class Chain : public PhysicNode {
+        static Chain *create(const ChainDef &def);
+    };
+
+
+    //////////////////////// Boundary ////////////////////////
+    class Boundary : public PhysicNode {
+        static Boundary *create(const CCRect &rect);
+    }
+
+    ///////////////////////// Texture /////////////////////////
+    struct TextureDef : public PhysicNodeDef
+    {
+        vector<b2Vec2> vertices;
+        string texture;
+        bool simplify;
+        /// Constructor
+        TextureDef();
+    };
+
+    class Texture : public PhysicNode {
+        static Texture *create(TextureDef &def);
+        static void simplifyPolygon(vector<b2Vec2> &polygon);
+        void addVertices(vector<b2Vec2> vertices);
+        TextureSprite *getTextureSprite();
+        static void triangulate(vector<CCPoint> &in, vector<CCPoint> &out);
+    }
+    
+    ////////////////////// IrisWipe /////////////////////////
+    class IrisWipe : public CCClippingNode {
+        static IrisWipe *create(float x, float y, bool opening, ccColor4F &color,float start, float end,float duration);
+        bool registerCallbackHandler(LUA_FUNCTION handler);
+        void unregisterCallbackHandler();
+        CCDrawNode *getStencil(); /// From CCClippingNode
+    }
+    
+    class ParticleQuad : public CCParticleSystemQuad {
+        static ParticleQuad* create(CCParticleBatchNode *batch, const char *plistfile);
+        static ParticleQuad* createStarsExplosion(CCParticleBatchNode *batch);
+        static ParticleQuad* createStarsExplosion2(CCParticleBatchNode *batch);
+    }
+    
+    ////////////////////// VisibleRect /////////////////////////
+
+    class VisibleRect
+    {
+        static CCRect rect();
+        static inline CCSize size();
+        static inline CCSize sizeInPixel();
+        static inline CCPoint origin();
+
+        static CCSize sizeAt(float s, float t);
+        static float pointAtY(float t);
+        static float pointAtX(float s);
+        /** Lua: returns two values */
+        static void pointAt(float *s, float *y);
+        static CCPoint pointAt(const CCPoint &p);
+
+        static CCPoint left();
+        static CCPoint right();
+        static CCPoint top();
+        static CCPoint bottom();
+        static CCPoint center();
+        static CCPoint leftTop();
+        static CCPoint rightTop();
+        static CCPoint leftBottom();
+        static CCPoint rightBottom();
+    };
+
+    ///////////////////////// Rope //////////////////////////
+
+    struct RopeDef
+    {
+        CCSpriteBatchNode *batch;
+        int uid;
+        int tag;
+        b2Vec2 startpos;
+        b2Vec2 endpos;
+        std::string anchorFrame;
+        std::string hookFrame;
+        float sensorRadius;
+        float anchorRadius;
+        float hookRadius;
+        float anchorDensity;
+        float hookRestitution;
+        float hookDensity;
+        float hookFriction;
+        b2Vec2 anchorLocalAnchor;
+        b2Vec2 hookLocalAnchor;
+
+        RopeDef()
+        {}
+    };
+
+    class Rope : public CCNode
+    {
+        static Rope *create(const RopeDef &def);
+        Circle *getAnchor();
+        Circle *getHook();
+        Circle *getSensor();
+        Circle *getInnerSensor();
+        void attach(PhysicNode *node);
+        void detach();
+    };
+
+    ///////////////////////// Ray Cast /////////////////////////
+
+    struct LuaRayCastInfo
+    {
+        PhysicNode *node;
+        b2Fixture *fixture;
+        b2Vec2 point;
+        b2Vec2 normal;
+        float fraction;
+        float rc;
+    };
+
+    ///////////////////////// Physics /////////////////////////
+
+    struct PhysicsDef {
+        CCScene *scene;             /// The target scene
+        float unit;               /// World unit in *meters*
+        b2Vec2 size;                /// World size in *units*
+        b2Vec2 pos;                 /// World coordinates origin
+        b2Vec2 gravity;             /// World gravity
+        bool continuousPhysics;
+        bool allowSleeping;
+
+        /// Constructor. Required by Tolua++
+        PhysicsDef();
+    };
+
+    class Physics {
+
+        enum GroupIndex {
+            kBoundaryLeft       = 1,
+            kBoundaryTop        = 2,
+            kBoundaryRight      = 3,
+            kBoundaryBottom     = 4
+        };
+
+        inline static bool isPix2dDebug();
+        inline static bool isCocos2dDebug();
+
+
+        static Physics * create(const PhysicsDef &def);
+        static Physics *shared();
+
+        b2World *world();
+        b2Body *dummy();
+
+        b2Vec2 getGravity();
+
+        void addNode(CCNode *node);
+        void addNode(CCNode *node, int zorder);
+        void addNode(CCNode *node, int zorder, int tag);
+
+        CCScene* getScene();
+
+        void removePhysicNode(PhysicNode *node);
+        void removeJoint(b2Joint *joint, bool deteUserData = true);
+
+        /// Pixels to meters
+        static double pixelToMeter(double p);
+        static b2Vec2 pixelToMeter(float x, float y);
+        static b2Vec2 pixelToMeter(const CCPoint &p);
+        /// Meters to pixels
+        static double meterToPixel(double p);
+        static CCPoint meterToPixel(double x, double y);
+        static CCPoint meterToPixel(const b2Vec2 &v);
+        /// Unit to meters
+        static b2Vec2 unitToMeter(float i, float j);
+        static b2Vec2 unitToMeter(float i, float j, float ox, float oy);
+        inline static b2Vec2 unitToMeter(const b2Vec2 &v);
+        inline static b2Vec2 unitToMeterCenter(const b2Vec2 &v);
+        inline static b2Vec2 unitToMeterCenter(float i, float j);
+        /// Meters to map units
+        static b2Vec2 meterToUnit(const b2Vec2 &v);
+        static void meterToUnit(float *x, float *y);
+
+        /// Units to pixels shortcut
+        inline static void pixelToUnit(float *x, float *y);
+        inline static CCPoint unitToPixel(float i, float j);
+        inline static CCPoint unitToPixelCenter(float i, float j);
+
+        void createPrismaticJoint(PhysicNode *nodeA, PhysicNode *nodeB);
+        void createFrictionJoint(PhysicNode *nodeA,float maxForce);
+
+        b2RopeJoint *createRopeJoint(PhysicNode *nodeA,PhysicNode *nodeB, b2Vec2 anchorA, b2Vec2 anchorB);
+        b2RopeJoint *createRopeJoint(PhysicNode *nodeA,PhysicNode *nodeB);
+
+        b2RevoluteJoint *createRevoluteJoint(PhysicNode *nodeA, PhysicNode *nodeB);
+        b2RevoluteJoint *createRevoluteJointWithAnchor(PhysicNode *nodeA, PhysicNode *nodeB, const b2Vec2 &anchor);
+        b2RevoluteJoint *createRevoluteJointWithLimit(PhysicNode *a, PhysicNode *b, const b2Vec2 &anchor, float lower, float upper);
+        void removeRevoluteJoint(PhysicNode *nodeA, PhysicNode *nodeB);
+        b2DistanceJoint *createDistanceJoint(PhysicNode *nodeA, PhysicNode *nodeB, const b2Vec2 &anchorA, const b2Vec2 &anchorB, float frequency = 4.f, float damping = .5f);
+        b2DistanceJoint *createDistanceJointWithLength(PhysicNode *nodeA, PhysicNode *nodeB, float length, float frequency = 4.f, float damping = 5.f);
+        b2WeldJoint *createWeldJoint(PhysicNode *nodeA,PhysicNode *nodeB,const b2Vec2 &anchorA,const b2Vec2 &anchorB,float frequency = 4.f,float damping = .5f);
+
+        void createPrismaticJoint(PhysicNode *node,const b2Vec2 &start,const b2Vec2 &end);
+
+        void rayCast(LUA_FUNCTION lo, const b2Vec2& point1, const b2Vec2& point2) const;
+        b2Vec2 getTrajectoryPoint(const b2Vec2& startingPosition, const b2Vec2& startingVelocity, float n);
+        float calculateVerticalVelocityForHeight(float desiredHeight);
+        float getTimestepsToTop(b2Vec2& startingVelocity);
+        float getMaxHeight(b2Vec2& startingPosition, b2Vec2& startingVelocity);
+
+        /// Access to sigleton instances
+        ContactListener* contactListener();
+        TouchListener* touchListener();
+        PhysicsLayer *layer();
+
+        /// Physics properties
+        float unit() const;
+        float getUnitInPixel() const;
+        b2Vec2 position() const;
+        void positionInPixel(float *x = 0, float *y = 0);
+        b2Vec2 size() const;
+        CCSize sizePixel() const;
+        b2Vec2 sizeUnits() const;
+
+        bool isPaused();
+        void pause();
+        void resume();
+
+        inline static void setDefaultBackgroundColor(float r, float g, float b, float a);
+        inline static ccColor4F getDefaultBackgroundColor();
+    };
+
+    class QueryMap
+    {
+        static bool query(float x, float y,float width, float height, int tag = -1);
+    };
+
+    //////////////////// Contacts ////////////////////////
+
+    struct ContactInfo
+    {
+        b2Body *bodyA;
+        b2Body *bodyB;
+        b2Fixture *fixtureA;
+        b2Fixture *fixtureB;
+        b2Vec2 pos;
+        b2Vec2 localA;
+        b2Vec2 localB;
+        PhysicNode *nodeA;
+        PhysicNode *nodeB;
+        signed short groupIndexA;
+        signed short groupIndexB;
+        bool isTouching;
+        //ContactDelegate *delegateA;
+        //ContactDelegate *delegateB;
+        //b2Contact *pContact;
+        ContactInfo();
+    };
+
+    class ContactListener // : public b2ContactListener
+    {
+        void cancelAllNotification(const PhysicNode *node);
+        void cancelCollisionNotification(const PhysicNode *node);
+        void cancelCollisionNotificationWithId(const PhysicNode *node, int uid);
+        void cancelCollisionNotificationWithTag(const PhysicNode *node, int tag);
+
+        /// void registerContactDelegateScript(LUA_FUNCTION lo);
+
+        int registerCollisionNotificationScript(LUA_FUNCTION lo, PhysicNode *node);
+        int registerCollisionNotificationScriptWithId(LUA_FUNCTION lo, PhysicNode *node, int uid);
+        int registerCollisionNotificationScriptWithTag(LUA_FUNCTION lo, PhysicNode *node, int tag);
+
+        int registerEndCollisionNotificationScriptWithTag(LUA_FUNCTION lo, PhysicNode *node, int tag);
+
+        void cancelEndCollisionNotificationScritpWithTag(const PhysicNode *node, int tag);
+        void dump();
+    };
+
+    ////////////////////// Touch /////////////////////////
+
+    struct TouchInfo
+    {
+        b2Body *body;
+        b2Fixture *fixture;
+        b2Vec2 pos;
+        b2Vec2 localpos;
+        PhysicNode *node;
+        CCTouch *touch;
+        CCEvent *event;
+        bool hasMoved;
+        
+        /// Constructor
+        TouchInfo();
+    }
+
+    class TouchListener
+    {
+        void registerTouchScriptHandler(LUA_FUNCTION lo, PhysicNode *target);
+        void cancelTouchDelegate(PhysicNode *node);
+        void destroyMouseJoint();
+        void setMouseJointMaxForce(float value);
+        float getMouseJointMaxForce(float value);
+        void setMouseJointFrequency(float value);
+        void setMouseJointDamping(float value);
+        b2Vec2 getReactionForce(float inv_dt) const;
+    };
+
+    //////////////////// Physics Layer /////////////////////////
+
+    /// Needed because of Physics::layer()
+    class PhysicsLayer : public CCLayer
+    {};
+
+    //////////////////// Actions ////////////////////////
+
+    class Action : public CCActionInterval
+    {
+        virtual void setSpeed(float value);
+    };
+
+    class MoveTo : public Action
+    {
+        static MoveTo *create(const b2Vec2 &start,const b2Vec2 &dest, float speed);
+    };
+
+    class CircleTo : public Action
+    {
+        static CircleTo *create(const b2Vec2 &center, float duration);
+    };
+
+    class SplineTo : public CCCardinalSplineTo
+    {
+        static SplineTo* create(float duration, CCPointArray* points, float tension);
+    };
+
+} /// end namespace
